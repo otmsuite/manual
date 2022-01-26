@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de Referência - HTML</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js">    
+    </script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    </head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+<body>   
+    <header class="header">
+        <nav>
+            <img src="otmsuite2.png" alt="OTMSuite">
+            <h1> Manual de Referência</h1>
+        </nav>
+   </header>    
+  <div class="conteudo-exp">
+    <h1>Outras funcionalidades</h1>
+    <p>
+        Outras funcionalidades da barra de tarefas podem ser consideradas “secundárias” e às vezes
+        passarem despercebidas, mas ainda assim contribuem para um desenvolvimento dinâmico e
+        fazem a diferença na experiência final.
+    </p>
+    <h2>Localizar e substituir</h2>
+    <p>
+        Procure por uma ou mais palavras e substitua pelo conteúdo desejado. 
+    </p>
+    <p>
+        <img src="imagens/ls-icon.png" alt="ícone localizar e substituir na barra de tarefas do Atom "> 
+    </p>
+    <h2>Localizar e substituir no projeto</h2>
+    <p>
+        Procure por uma ou mais palavras e substitua pelo conteúdo desejado em todos os arquivos de
+        um determinado projeto.
+    </p>
+    <p>
+        <img src="imagens/lsp-icon.png" alt="ícone localizar e substituir no projeto na barra de tarefas do Atom "> 
+    </p>
+    <h2>Exibir todos os caracteres</h2>
+    <p>
+        Procure por uma ou mais palavras e substitua pelo conteúdo desejado em todos os arquivos de
+        um determinado projeto.
+    </p>
+    <p>
+        <img src="imagens/lsp-icon.png" alt="ícone localizar e substituir no projeto na barra de tarefas do Atom "> 
+    </p>
+    </div>
+    <div class="container-titulo-barra">
+    <a>Conteúdo</a>
+    </div>
+    <!--Navigation bar-->
+    <div id="nav-placeholder">
+    </div>
+    <script>
+        $(function(){
+          $("#nav-placeholder").load("nav.html");
+        });
+        </script>
+        <!--end of Navigation bar-->
+    <script type="text/javascript">
+        /* $('.collapsable').click(function(){ $(this).parent().children().toggle();
+        $(this).toggle(); }); */
+        $( document ).ready(function() {
+        $('#outras-funcionalidades').parent().children().toggle();
+        $('#outras-funcionalidades').toggle();
+        $('#outras-funcionalidades')[0].scrollIntoView(true);
+        });
+    </script>
+    </body>
+</html>
+ 

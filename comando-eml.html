@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de Referência - HTML</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js">    
+    </script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    </head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+<body>   
+    <header class="header">
+        <nav>
+            <img src="otmsuite2.png" alt="OTMSuite">
+            <h1> Manual de Referência</h1>
+        </nav>
+   </header>    
+  <div class="conteudo-exp">
+    <h1>@>EML</h1>
+     <p>
+        Dispara e-mails (todos se ID=0 ou específico, conforme ID passado). 
+    </p>
+    <h2>Exemplo de código</h2>
+    <p>
+        <code>
+            [PLF] <br>
+            @>EML <br>
+            12
+        </code>
+    </p>
+    <h2>Detalhe</h2>
+    <p>
+        Para seu uso, é necessário que estejam configurados alguns parâmetros na tabela OTM_PARAMETROS.
+O ID refere-se a um registro na tabela OTM_MAIL_CAB.
+    </p>
+    <p>
+        A tabela OTM_MAIL_CAB armazena as seguintes informações:
+        <ul class="spacing">
+            <li><code>ID</code></li>
+            <li><code>Descrição</code></li>
+            <li><code>Usuário que criou</code></li>
+            <li><code>Data de criação</code></li>
+            <li><code>Data do envio</code></li>
+            <li><code>Situação</code></li>
+            <li><code>Mensagem de erro</code></li>
+        </ul>
+    </p>
+    <p>
+        Para enviar um e-mail, precisa-se adicionar um registro com id, descrição, usuário que
+criou, data da criação e situação = 1 (a enviar);
+    </p>
+    <p>
+        A data do envio, situação e mensagem de erro serão atualizadas pela plataforma;
+    </p>
+    <p>
+        Situação igual a 2 indica um e-mail bem sucedido, e igual a 3 indica erro;
+    </p>
+    <p>
+        Caso ocorra erro, a última coluna será preenchida com o erro em questão.
+    </p>
+    <p>
+        A tabela OTM_MAIL_DET deve conter as informações do e-mail:
+    </p>
+    <p>
+        A coluna MAIL_CAB_ID referencia o registro da tabela OTM_MAIL_CAB para realizar o
+envio;
+    </p>
+    <p>
+        A coluna tag dita o elemento do e-mail (REMETENTE, DESTINO, ASSUNTO, CONTEUDOou ANEXO, sendo o último opcional);
+    </p>
+    <p>
+        A coluna seq ordena as tags DESTINO, CONTEUDO e ANEXO;
+    </p>
+    <p>
+        A coluna conteudo contém o conteúdo de acordo com a tag utilizada.
+    </p>
+
+    </div>  
+    <div class="container-titulo-barra">
+    <a>Conteúdo</a>
+    </div>
+    <!--Navigation bar-->
+    <div id="nav-placeholder">
+    </div>
+    <script>
+        $(function(){
+          $("#nav-placeholder").load("nav.html");
+        });
+        </script>
+        <!--end of Navigation bar-->
+    <script type="text/javascript">
+        /* $('.collapsable').click(function(){ $(this).parent().children().toggle();
+        $(this).toggle(); }); */
+        $( document ).ready(function() {
+        $('#comandos').parent().children().toggle();
+        $('#comandos').toggle();
+        $('#comandos')[0].scrollIntoView(true);
+        });
+    </script>
+    </body>
+</html>

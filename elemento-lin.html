@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de Referência - HTML</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js">    
+    </script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    </head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+<body>   
+    <header class="header">
+        <nav>
+            <img src="otmsuite2.png" alt="OTMSuite">
+            <h1> Manual de Referência</h1>
+        </nav>
+   </header>    
+  <div class="conteudo-exp">
+    <h1>[LIN]</h1>
+     <p>
+        Traça um segmento de reta (linha) no painel
+    </p>
+    <h2>Sintaxe da notação</h2>
+    <p><code>[identificação do arquivo]</code></p>
+    <h2>sintaxe da notação</h2>
+    <p>
+        <code>[espessura da linha ^ tipo de linha]</code>
+    </p>
+    <p>
+        Tipo de linha: 0 define linha contínua; valores maiores que 0 definem padrão de tracejamento da linha.
+    </p>
+    <h2>Detalhe</h2>
+    <p>
+        Em [LIN], a sintaxe padrão de elemento possui uma pequena variação:
+ao invés de Largura e Altura, estes valores equivalem à posição final de X e Y (respectivamente), conforme:
+    </p>
+    <p>
+        <code>[ELEMENTO] [LIN]; PosX; PosY; PosX_final; PosY_final; Cor; [espessura da linha ^ tipo de
+            linha]</code>
+    </p>
+    <h2>Exemplo</h2>
+    <p>
+        <code> [LIN] LIN_001 ; 790; 20; 790; 590; VRM; [2 ^ 10]</code>
+    </p>
+    <img src="" alt="img de exemplo">
+    </div>
+    <div class="container-titulo-barra">
+    <a>Conteúdo</a>
+    </div>
+    <!--Navigation bar-->
+    <div id="nav-placeholder">
+    </div>
+    <script>
+        $(function(){
+          $("#nav-placeholder").load("nav.html");
+        });
+        </script>
+        <!--end of Navigation bar-->
+    <script type="text/javascript">
+        /* $('.collapsable').click(function(){ $(this).parent().children().toggle();
+        $(this).toggle(); }); */
+        $( document ).ready(function() {
+        $('#imagens').parent().children().toggle();
+        $('#imagens').toggle();
+        $('#imagens')[0].scrollIntoView(true);
+        });
+    </script>
+    </body>
+</html>

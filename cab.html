@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head></head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de Referência - HTML</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js">    
+    </script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    </head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+<body>   
+    <header class="header">
+        <nav>
+            <img src="otmsuite2.png" alt="OTMSuite">
+            <h1> Manual de Referência</h1>
+        </nav>
+   </header>    
+  <div class="conteudo-exp">
+    <h1>[CAB]</h1>
+    <p>
+        Pode receber parâmetros (sempre a segunda parte do parâmetro, equivalente a {[PARAMETRO]}) e é utilizada para encabeçar a tabela de dados (e o título do relatório impresso).
+        Caso não informada, [CAB] assume o conteúdo definido na tag [TIT]. <br>
+    </p>
+    <h2>exemplo de código</h2>
+    <p>
+        <code>
+            [DIM] <br>
+            40:0<br><br>
+
+            [TIT] <br>
+            Movimentação de Visitantes<br><br>
+               
+            [CAB] <br>
+            Registrar [ENTRADA_SAIDA] de Visitante<br><br>
+              
+            [PAR] <br>
+            [ENTRADA_SAIDA]: Tipo: DC300: 1;Entrada;2;Saída : Entrada<br><br>
+                
+            [SQL] <br>
+            select 'exemplo de cabeçalho' from dual
+    </code>
+    </p>
+    <h2>Exemplo na plataforma</h2>
+    <div>
+        <img src="" alt="exemplo CAB na plataforma">
+    </div>
+    </div>
+    <div class="container-titulo-barra">
+    <a>Conteúdo</a>
+    </div>
+    <!--Navigation bar-->
+    <div id="nav-placeholder">
+    </div>
+    <script>
+        $(function(){
+          $("#nav-placeholder").load("nav.html");
+        });
+        </script>
+        <!--end of Navigation bar-->
+    <script type="text/javascript">
+        /* $('.collapsable').click(function(){ $(this).parent().children().toggle();
+        $(this).toggle(); }); */
+        $( document ).ready(function() {
+        $('#cab').parent().children().toggle();
+        $('#cab').toggle();
+        $('#cab')[0].scrollIntoView(true);
+        });
+    </script>
+    </body>
+</html>
+ 

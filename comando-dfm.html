@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de Referência - HTML</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js">    
+    </script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    </head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+<body>   
+    <header class="header">
+        <nav>
+            <img src="otmsuite2.png" alt="OTMSuite">
+            <h1> Manual de Referência</h1>
+        </nav>
+   </header>    
+  <div class="conteudo-exp">
+    <h1>@>DFM</h1>
+     <p>
+        Permite copiar, mover ou apagar arquivos de/para pastas do SO ou listar o conteúdo de
+        uma pasta. Sua notação recebe:
+    </p>
+    <h3>Origem</h3>
+    <p>
+        Caminho e nome do arquivo de origem (a sofrer a ação).
+    </p>
+    <h3>Destino</h3>
+    <p>
+        Caminho e nome do arquivo/pasta destino (para ação Copiar e Mover).
+    </p>
+    <h3>Ação</h3>
+    <p>
+        indica a ação a ser realizada em origem (Copiar, Mover, Deletar ou Listar).
+    </p>
+    <h3>Interação/Hidden</h3>
+    <p>
+        Indica se haverá mensagem de interação com usuário caso arquivo destino já exista (para
+ação Listar, indica se lista arquivos/pastas ocultas/sistema).
+    </p>
+    <h3>Subpastas</h3>
+    <p>
+        Indica se deve criar pastas destinos caso não existam (para ação Listar indica se deve listar
+conteúdo das subpastas).
+    </p>
+    <h3>Erros_na_Tela</h3>
+    <p>
+        Indica se mensagens de erro devem ser apresentadas na tela (quando SIM, processo é
+interrompido). Ação Listar não considera esta notação
+    </p>
+    <p>
+        Mensagens de sucesso ou erro são armazenadas em OTM_MENSAGEM com tipo = 'DFM'.
+Na Ação Listar, a relação de arquivos/pastas será armazenada em OTM_MENSAGEM.
+Caso seja necessário utilizar : no caminho de origem ou destino, deve-se usar @.
+    </p>
+    <h2>Exemplo de código</h2>
+    <p>
+        <code>
+            [PLI] <br>
+            @>SQL <br>
+            begin <br>
+            delete OTM_MENSAGEM where sessao=SYS_CONTEXT(‘USERENV’, ‘SESSIONID’) and
+            tipo = ‘DFM’; <br>
+            end; <br>
+            @>DFM<br>
+            C@/temp/teste1.txt : C@/temp/xxx/teste2.txt : C : S : S : N<br>
+            @>DFM<br>
+            C@/temp : : L : N : S<br>
+        </code>
+    </p>
+    </div>  
+    <div class="container-titulo-barra">
+    <a>Conteúdo</a>
+    </div>
+    <!--Navigation bar-->
+    <div id="nav-placeholder">
+    </div>
+    <script>
+        $(function(){
+          $("#nav-placeholder").load("nav.html");
+        });
+        </script>
+        <!--end of Navigation bar-->
+    <script type="text/javascript">
+        /* $('.collapsable').click(function(){ $(this).parent().children().toggle();
+        $(this).toggle(); }); */
+        $( document ).ready(function() {
+        $('#comandos').parent().children().toggle();
+        $('#comandos').toggle();
+        $('#comandos')[0].scrollIntoView(true);
+        });
+    </script>
+    </body>
+</html>

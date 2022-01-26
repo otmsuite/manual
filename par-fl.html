@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de Referência - HTML</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js">    
+    </script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    </head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+<body>   
+    <header class="header">
+        <nav>
+            <img src="otmsuite2.png" alt="OTMSuite">
+            <h1> Manual de Referência</h1>
+        </nav>
+   </header>    
+  <div class="conteudo-exp">
+    <h1>FL</h1>
+     <p>
+        Parâmetro tipo file. Permite carregamento de arquivos para dentro da plataforma.
+    </p>
+     <p>
+        Recebe como sua notação: 
+        <ul class="spacing">
+            <li>Extensões de arquivos (separadas por vírgula se múltiplas);</li>
+            <li>Respectivas descrições (também separadas por vírgula);</li>
+            <li>Pasta inicial para busca, arquivo default (conteúdo padrão para o campo).</li>
+        </ul>
+    </p>
+     <p>
+        Caso a extensão definida para os "arquivos" seja DIR, este parâmetro receberá pastas ao
+        invés de arquivos.
+     </p>
+     <h2>Sintaxe</h2>
+     <p>
+        <code>
+            [PARAMETRO]: Label: FL: Extensão do Arquivo; Descrição; Pasta inicial: Arquivo default : ID do VDD : [PAR Posicionamento]
+        </code>
+     </p>
+     <h2>Exemplo de código</h2>
+     <p>
+         <code>
+            [PAR] <br>
+            [UPLOAD]: Carregamento de Arquivo: FL500: PDF; Upload; /Desktop : Arquivo_Upload.PDF
+        </code>
+     </p>
+     <h2>Exemplo na plataforma</h2>
+     <img src="imagens/.png" alt="exemplo de FL na plataforma">
+    </div>
+    <div class="container-titulo-barra">
+    <a>Conteúdo</a>
+    </div>
+    <!--Navigation bar-->
+    <div id="nav-placeholder">
+    </div>
+    <script>
+        $(function(){
+          $("#nav-placeholder").load("nav.html");
+        });
+        </script>
+        <!--end of Navigation bar-->
+    <script type="text/javascript">
+        /* $('.collapsable').click(function(){ $(this).parent().children().toggle();
+        $(this).toggle(); }); */
+        $( document ).ready(function() {
+        $('#identificador-ctrl-v').parent().children().toggle();
+        $('#identificador-ctrl-v').toggle();
+        $('#identificador-ctrl-v')[0].scrollIntoView(true);
+        });
+    </script>
+    </body>
+</html>

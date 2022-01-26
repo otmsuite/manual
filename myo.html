@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de Referência - HTML</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js">    
+    </script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    </head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+<body>   
+    <header class="header">
+        <nav>
+            <img src="otmsuite2.png" alt="OTMSuite">
+            <h1> Manual de Referência</h1>
+        </nav>
+   </header>    
+  <div class="conteudo-exp">
+    <h1>MYO</h1>
+    <p>
+        Arquivo do tipo MyOptions a ser executado por <code>Menu.JAR</code>. Neste arquivo são definidas
+        informações características de cada Menu, como: nome do Menu, imagem de fundo, controle de acesso e suas aplicações (MKQ’s e MKP’s). Pode-se dividir a estrutura deste
+        arquivo em duas linhas paramétricas chamadas de <span><a href="linha-de-cabecalho.html">linha de cabeçalho</a></span> e <span><a href="linha-de-opcoes.html">linha de opções</a></span>. 
+    </p>
+    <p>
+        É o arquivo de onde nasce o menu de aplicações e deverá sempre se encontrar na pasta <code>options</code>.
+    </p>
+    <p class="img">
+        <img src="imagens/myo.png" alt="Pasta options">
+    </p>
+    <h1>Criando um  menu</h1>
+    <p>
+        Abra o editor de texto de sua preferência, crie um novo arquivo e o nomeie como desejar, lembre-se de salvá-lo com <code>.MYO</code> na pasta <code>options</code>, dentro da pasta raiz <code>otmtech</code>.
+    </p>
+    <p>
+        O primeiro passo para a criação do menu é a configuração da <span><a href="linha-de-cabecalho.html">linha de cabeçalho</a></span>, onde iremos definir título do menu, imagem e outras opções. 
+    </p>
+    <!-- <p>
+        <span>Label</span>: Escolha um texto de fundo para seu menu.
+    </p>
+    <p>
+        <span>Título</span>: Escolha um título para seu menu.
+    </p>
+    <p>
+        <span>ícone</span>: Selecione uma imagem para o ícone do menu. Caso esteja utilizando o editor de texto Atom, use a lista de imagens para facilitar a busca pela imagem ideal.
+    </p>
+    <p>
+        <span>Visualizar</span>: S 
+    </p> -->
+    <p>
+        Obs: por boa prática, recomenda-se utilizar a primeira linha de código como comentário.
+    </p>
+    <p>
+        Vamos começar com uma linha de cabeçalho base para facilitar. Fique a vontade para personalizá-la!
+    </p>
+    <p>
+        <code>Menu de teste; Menu de teste; %SVGL/t; Visualizar menu; N;</code>
+    </p>
+    <p>
+        O segundo passo é a configuração da <span><a href="linha-de-opcoes.html">linha de opções</a></span>, onde definiremos os detalhes da aplicação que desenvolveremos depois.
+    </p>
+    <p>
+        
+    </p>
+    <p>
+        <code>1	;Aplicação de teste					;Aplicação de teste			;MKQ:estudos/teste					;%SVGD/arquivos</code>
+    </p>
+    <p>
+        O resultado deve ser algo parecido com a imagem abaixo:
+    </p>
+    <p class="img">
+        <img src="imagens/exemplo-myo.png" alt="Exemplo criação de menu">
+    </p>
+    <p>
+        Seu menu está criado! Obviamente ainda sem nenhuma aplicação, para aprender a desenvolver uma aplicação simples, vá até <span><a href="mkq.html">criando uma aplicação</a></span>
+    </p>
+    </div>
+    <div class="container-titulo-barra">
+    <a>Conteúdo</a>
+    </div>
+    <!--Navigation bar-->
+    <div id="nav-placeholder">
+    </div>
+    <script>
+        $(function(){
+          $("#nav-placeholder").load("nav.html");
+        });
+        </script>
+        <!--end of Navigation bar-->
+    <script type="text/javascript">
+        /* $('.collapsable').click(function(){ $(this).parent().children().toggle();
+        $(this).toggle(); }); */
+        $( document ).ready(function() {
+        $('#myo').parent().children().toggle();
+        $('#myo').toggle();
+        $('#myo')[0].scrollIntoView(true);
+        });
+    </script>
+    </body>
+</html>
+ 

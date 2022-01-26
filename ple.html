@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de Referência - HTML</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js">    
+    </script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    </head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+<body>   
+    <header class="header">
+        <nav>
+            <img src="otmsuite2.png" alt="OTMSuite">
+            <h1> Manual de Referência</h1>
+        </nav>
+   </header>    
+  <div class="conteudo-exp">
+    <h1>[PLE]</h1>
+     <p>
+        Utilizado em conjunto com [PLF].
+    </p>
+    <p>
+        Seu conteúdo deverá ser o label da coluna de [SQL] definida na tag [PLE]. Seu conteúdo
+        poderá ser utilizado em qualquer uma das seguintes tags: [OPC],[MFI],[PLF] e [MFF].
+    </p>
+    <p>
+        Caso inicie com o caracter *, indica que múltiplos registros poderão ser selecionados (caso
+        contrário, apenas um registro poderá ser selecionado).
+    </p>
+    <p>
+        O conteúdo de [PLE] pode retornar:
+    </p>
+    <p class="spacing">
+        <ul>
+            <li> 1 - Conteúdo separado por vírgula em caso de múltiplos registros selecionados (Analisar o item 3);</li>
+            <li> 2 - [PLE] em caso de nenhum registro selecionado;</li>
+            <li> 3 -<code> Select MSG from OTM_MENSAGEM where TIPO='ID' and SESSAO=Sessão Atual</code> caso
+                seja necessário retornar um número de registros ou caracteres que excedam o limite
+                estabelecido pelo banco de dados.
+                Embora não seja obrigatório, é boa prática definir a tag [OPC] ao utilizar a tag [PLE].
+                Observação: Na validação do [PLE] é necessário o uso de aspas simples ('[PLE]').</li>
+        </ul>
+        <h2> Exemplo</h2>
+        <p>
+            <code>
+                [OPC] <br>
+                ADD: %SVGI/md-add-circle-outline : Adicionar Item : N <br>
+                DEL: %SVGI/md-close-circle-outline : Excluir Item : N <br> <br>
+                [PLE] <br>
+                *ID#0 <br><br>
+                [SQL] <br>
+                select id “ID#0”, desc_tecnica “Descrição#90” from titens
+            </code>
+        </p>
+    </div>
+    <div class="container-titulo-barra">
+    <a>Conteúdo</a>
+    </div>
+    <!--Navigation bar-->
+    <div id="nav-placeholder">
+    </div>
+    <script>
+        $(function(){
+          $("#nav-placeholder").load("nav.html");
+        });
+        </script>
+        <!--end of Navigation bar-->
+    <script type="text/javascript">
+        /* $('.collapsable').click(function(){ $(this).parent().children().toggle();
+        $(this).toggle(); }); */
+        $( document ).ready(function() {
+        $('#identificador-ctrl-v').parent().children().toggle();
+        $('#identificador-ctrl-v').toggle();
+        $('#identificador-ctrl-v')[0].scrollIntoView(true);
+        });
+    </script>
+    </body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de Referência - HTML</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js">    
+    </script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    </head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+<body>   
+    <header class="header">
+        <nav>
+            <img src="otmsuite2.png" alt="OTMSuite">
+            <h1> Manual de Referência</h1>
+        </nav>
+   </header>    
+  <div class="conteudo-exp">
+    <h1>[VDD]</h1>
+     <p>
+        Esta tag permite definir regras de validação para edição de campos (na tela de parâmetros
+        definida por [PAR] ou no grid, quando utilizada a tag [EDT]).
+    </p>
+    <p>
+        Variável [$n$] refere-se à coluna n ([EDT]) em edição.
+    </p>
+    <h2>Sintaxe</h2>
+    <p>
+        <code> +> ID : WHERE : TIPO : MENSAGEM </code>
+    </p>
+    <p>
+        O ID deve ser igual ao ID do [EDT] em caso de utilização no [EDT]. Caso for utilizado no [PAR], o
+ID do VDD deve ser informado no parâmetro a ser validado (vide sintaxe padrão dos
+parâmetros).
+    </p>
+    <p>
+        O WHERE é a condição a ser utilizada para a validação. O elemento (parâmetro ou EDT) a ser
+validado é válido quando a condição retornar FALSO.
+    </p>
+    <p>
+        O TIPO pode ser E ou W, onde W é warning (alerta) e E é error (erro).
+O tipo W de um elemento inválido mostrará o alerta, porém permitirá prosseguir.
+O tipo E de um elemento inválido mostrará um erro ao tentar dar sequência à operação e não
+permitirá prosseguir.
+    </p>
+    <p>
+        A MENSAGEM é o que será exibido quando o elemento for inválido e o usuário tentar prosseguir
+com a operação. Em caso de erro no banco, a mensagem retornada será do erro do banco, e não
+do VDD  
+    </p>
+    <h2>Exemplo de código</h2>
+    [VDD] <br>
+    +> 1 : ‘X[$EDT$]’ = ‘X’ :E : Campo deve ser preenchido <br>
+    +> 1 : length(‘X[$EDT$]’ )<11 :E : Campo deve ter, pelo menos, 10 caracteres
+    <h2>Exemplo na plataforma</h2>
+    <img src="" alt="Exemplo VDD">
+    </div>  
+    <div class="container-titulo-barra">
+    <a>Conteúdo</a>
+    </div>
+    <!--Navigation bar-->
+    <div id="nav-placeholder">
+    </div>
+    <script>
+        $(function(){
+          $("#nav-placeholder").load("nav.html");
+        });
+        </script>
+        <!--end of Navigation bar-->
+    <script type="text/javascript">
+        /* $('.collapsable').click(function(){ $(this).parent().children().toggle();
+        $(this).toggle(); }); */
+        $( document ).ready(function() {
+        $('#tit').parent().children().toggle();
+        $('#tit').toggle();
+        $('#tit')[0].scrollIntoView(true);
+        });
+    </script>
+    </body>
+</html>

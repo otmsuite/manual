@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de Referência - HTML</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js">    
+    </script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    </head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+<body>   
+    <header class="header">
+        <nav>
+            <img src="otmsuite2.png" alt="OTMSuite">
+            <h1> Manual de Referência</h1>
+        </nav>
+   </header>    
+  <div class="conteudo-exp">
+    <h1>UNION_TABLE_n</h1>
+     <p>
+        Este comando permite dividir o bloco SQL em dois grids distintos (inclusive com número
+        de colunas distintas)
+    </p>
+    <p>
+        O segundo bloco será apresentado acima do grid.
+    </p>
+    <p>
+        n define o número de linhas fixas no grid. Default: 1.
+    </p>
+    <p>
+        Não é possível uso conjunto com colunas fixas ([DIM]).
+    </p>
+    <h2>Exemplo de código</h2>
+     <p>
+        <code>
+            [SQL] <br>
+            select rownum “Cod#10”, 1 “TESTE#N10@S”, ‘T’||rownum “Descrição#80” <br>
+            from dual connect by level<100 <br>
+            UNION_TABLE_4 <br>
+            select rownum “Cod#10”, 1 “TESTE#N10@S”, ‘T’||rownum “Descrição#80”, ‘Texto’ “Teste#20” <br>
+            from dual connect by level<8 
+        </code>
+    </p>
+    <h2> Exemplo na plataforma </h2>
+    <img src="imagens/ldi-open.png" alt="lista de imagens"> 
+    </div>
+    <div class="container-titulo-barra">
+    <a>Conteúdo</a>
+    </div>
+    <!--Navigation bar-->
+    <div id="nav-placeholder">
+    </div>
+    <script>
+        $(function(){
+          $("#nav-placeholder").load("nav.html");
+        });
+        </script>
+        <!--end of Navigation bar-->
+    <script type="text/javascript">
+        /* $('.collapsable').click(function(){ $(this).parent().children().toggle();
+        $(this).toggle(); }); */
+        $( document ).ready(function() {
+        $('#sql-union-table').parent().children().toggle();
+        $('#sql-union-table').toggle();
+        $('#sql-union-table')[0].scrollIntoView(true);
+        });
+    </script>
+    </body>
+</html>

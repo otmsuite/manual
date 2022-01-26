@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de Referência - HTML</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js">    
+    </script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    </head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+<body>   
+    <header class="header">
+        <nav>
+            <img src="otmsuite2.png" alt="OTMSuite">
+            <h1> Manual de Referência</h1>
+        </nav>
+   </header>    
+  <div class="conteudo-exp">
+    <h1>Seleção</h1>
+     <p>
+        É possível alterar o modo de seleção de registros. Para isso, usa-se uma coluna com o
+        nome (!) seguido de um identificador
+    </p>
+    <h2>Sintaxe</h2>
+    <p> 
+        <code>ID "(!)Dados#5"</code>
+    </p>
+    <p>
+        Os registros serão gravados na OTM_MENSAGEM com a sessão atual, TIPO igual ao nome
+        da coluna e MSG com o conteúdo da coluna. Caso utilizado em conjunto de um [PLE] com
+        seleção múltipla, serão habilitados dois botões no GRID (para selecionar e deselecionar os
+        registros)
+    </p>
+    <h2>Exemplo de código    </h2>
+    <p>
+        <code>
+            [DIM] <br>
+            50:0:0:25:70:15:100 <br>
+            [SQL] <br>
+            select id “ID#10”, ID “(!)Código#2”, Texto “Descrição#9$1”, Numero “Valor#N8$4@S” <br>
+            from tmp_teste_edt X <br> 
+            order by id
+        </code>
+    </p>
+    <p>
+        Labels com caracteres especiais (como @ ou $) devem estar entre aspas duplas.
+    </p>
+    <h2> Exemplo de código </h2>
+    <p>
+        <code>  [SQL] <br>
+                select id “ID#10”, ID “Código#5”, Texto “Descrição#15$1”
+        </code>
+    </p>
+    <h2> Exemplo na plataforma</h2>
+    <img src="imagens/" alt="SQL totalizador"> 
+    </div>  
+    <div class="container-titulo-barra">
+    <a>Conteúdo</a>
+    </div>
+    <!--Navigation bar-->
+    <div id="nav-placeholder">
+    </div>
+    <script>
+        $(function(){
+          $("#nav-placeholder").load("nav.html");
+        });
+        </script>
+        <!--end of Navigation bar-->
+    <script type="text/javascript">
+        /* $('.collapsable').click(function(){ $(this).parent().children().toggle();
+        $(this).toggle(); }); */
+        $( document ).ready(function() {
+        $('#sql-totalizador').parent().children().toggle();
+        $('#sql-totalizador').toggle();
+        $('#sql-totalizador')[0].scrollIntoView(true);
+        });
+    </script>
+    </body>
+</html>

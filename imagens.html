@@ -1,0 +1,168 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de Referência - HTML</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js">    
+    </script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    </head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+<body>   
+    <header class="header">
+        <nav>
+            <img src="otmsuite2.png" alt="OTMSuite">
+            <h1> Manual de Referência</h1>
+        </nav>
+   </header>    
+  <div class="conteudo-exp">
+    <h1>Imagens</h1>
+     <p>
+        As imagens são utilizadas em diversos lugares na OTMSuite, porém seguem com a mesma
+sintaxe. Elas se encontram na pasta <code>Images</code>, separadas entre Otimiza e Cliente.
+     </p>
+     <p>
+        As extensões suportadas são: <code>.png</code>, <code>.gif</code> e <code>.svg</code>.
+     </p>
+     <p>
+        Não é necessário colocar a extensão da imagem nos seguintes casos: Imagens <code>PNG</code> e
+        Imagens <code>SVG</code> nas pastas padrões
+    </p>
+    <h2> PNGs e GIFs</h2>
+    <p>
+        <ul>
+            <li><code>%C = /images/cliente</code></li>
+            <li><code>%D = /images/otimiza/diversos</code></li>
+            <li><code>%P = /imagem/otimiza/padrao</code></li>
+            <li><code>%S = /imagem/otimiza/system</code></li>
+        </ul>
+    </p>
+    <h2>SVGs</h2>
+    <p>
+        <ul>
+            <li><code>%SVGC = /images/cliente/svg</code></li>
+            <li><code>%SVGL = /images/cliente/svg/letras</code></li>
+            <li><code>%SVGD = /images/cliente/svg/diversos</code></li>
+            <li><code>%SVGP = /images/cliente/svg/padrao</code></li>
+            <li><code>%SVGS = /images/cliente/svg/system</code></li>
+            <li><code>%SVGI = /images/cliente/svg/ionicons</code></li>
+            <li><code>%SVGF = /images/cliente/svg/fontawesome</code></li>
+        </ul>
+    <h2>Cores</h2>
+    <p>
+        Imagens SVG podem receber cores no formato RGBA como parâmetro:
+    </p>
+    <p>
+        <code>%SVGI/logo-buffer|@61-84-34-255||139-175-169-255 </code>
+    </p>
+    <p>
+        As cores devem ser separadas por | logo após o caminho da imagem.
+    </p>
+    <p>
+        Cada cor altera um segmento da imagem.
+    </p>
+    <p>
+        Para não definir uma cor para algum segmento específico, basta deixar vazio.
+    </p>
+    <p>
+        A cor com @ define o default para os segmentos sem cor definida.
+    </p>
+    <h2>Padrões de cores</h2>
+    <h3>Preto</h3>
+    <p>
+       <code>PTO ou 000-000-000</code>
+    </p>
+    <h3>Branco</h3>
+    <p>
+       <code>BCO ou 250-250-250</code>
+    </p>
+    <h3>Azul</h3>
+    <p>
+       <code>AZL ou 090-130-190</code>
+    </p>
+    <h3>Verde</h3>
+    <p>
+       <code>VDE ou 000-128-000</code>
+    </p>
+    <h3>Cinza</h3>
+    <p>
+       <code>CZA ou 175-175-175</code>
+    </p>
+    <h3>Amarelo</h3>
+    <p>
+       <code>AMR ou 250-250-000</code>
+    </p>
+    <h3>Vermelho</h3>
+    <p>
+       <code>VRM ou 250-000-000</code>
+    </p>
+    <p></p>
+    <p>
+        Desta forma, podemos usar %SVGI/md-water|VDE e a plataforma vai converter para o
+RGB referenciado.
+    </p>
+    <p>
+        Podemos também definir cor e espessura para as bordas de cada segmento do svg. Desta forma:
+    </p>
+    <p>
+        <code>#IMG^%SVGC/imagem|cor_preenchimento1/cor_borda1</code>
+    </p>
+    <p>
+        Note que o mesmo segmento da imagem tem sua cor de preenchimento definida, bem
+como a cor da borda. O separador para poder definir a borda é a barra.
+    </p>
+    <p>
+        A cor da borda é definida da mesma forma que a cor do preenchimento (RGBA), porém
+pode ter uma pequena diferença: podemos definir também, juntamente com a cor da
+borda, uma espessura. 
+    </p>
+    <p>
+        Veja um exemplo com a diferença:
+    </p>
+    <p>
+        <code>Imagem|255-0-0-255/220-220-220-255-10</code>
+    </p>
+    <p>
+        No exemplo anterior anto a cor do preenchimento como da borda são totalmente visíveis
+(quarto valor = 255), mas na borda ainda temos o valor 10 que se refere à espessura.
+    </p>
+    <p>
+        Observações:
+    </p>
+    <p>
+        Não é necessário definir um preenchimento para que a borda seja definida, podemos
+deixar o preenchimento padrão e alterar somente as propriedades.
+    </p>
+    <p>
+        Não é necessário definir a opacidade para definir a cor ou mesmo a espessura.
+    </p>
+    </div>
+    <div class="container-titulo-barra">
+    <a>Conteúdo</a>
+    </div>
+    <!--Navigation bar-->
+    <div id="nav-placeholder">
+    </div>
+    <script>
+        $(function(){
+          $("#nav-placeholder").load("nav.html");
+        });
+        </script>
+        <!--end of Navigation bar-->
+    <script type="text/javascript">
+        /* $('.collapsable').click(function(){ $(this).parent().children().toggle();
+        $(this).toggle(); }); */
+        $( document ).ready(function() {
+        $('#imagens').parent().children().toggle();
+        $('#imagens').toggle();
+        $('#imagens')[0].scrollIntoView(true);
+        });
+    </script>
+    </body>
+</html>

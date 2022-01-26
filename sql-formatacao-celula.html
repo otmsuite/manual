@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de Referência - HTML</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js">    
+    </script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    </head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+<body>   
+    <header class="header">
+        <nav>
+            <img src="otmsuite2.png" alt="OTMSuite">
+            <h1> Manual de Referência</h1>
+        </nav>
+   </header>    
+  <div class="conteudo-exp">
+    <h1>Formatação de célula</h1>
+    <h2> Padrão adotado para background (RGB):</h2>
+     <p>
+        <code>254-254-254 e 231-238-245</code>
+    </p>
+    <h2> Padrão adotado para foreground (RGB):</h2>
+    <p>
+        <code>254-254-254 e 231-238-245</code>
+    </p>
+    <h2>Fonte padrão:</h2>
+    <p>
+        <code>Noto sans - 12</code>
+    </p>
+    <h2>Cores e fontes</h2>
+    <p>
+        Para alterar a cor/fonte de uma célula, basta preceder o conteúdo conforme a sintaxe: <br> <code> {RB-GB-BB/RF-GF-BF/Fonte/Tipo/Tamanho} </code>
+    </p>
+     <p>
+        <code>RB-GB-BB</code> é o RGB do background. Use <code>X-X-X</code> (ou X) para adotar o padrão;
+     </p>
+     <p>
+        <code>RF-GF-BF</code> é o RGB do foreground. Use <code>X-X-X</code> (ou X) para adotar o padrão;
+    </p>
+    <p>
+        A Fonte deve estar cadastrada no mapeamento de fontes (ou instalada na máquina).
+    </p>
+    <p>
+        Tipo refere-se à fonte: 0-normal, 1-negrito, 2-itálico, 3-ambos
+    </p>
+    <p>
+        Se a string de formatação estiver dentro de chaves duplas, a definição será aplicada para a
+linha inteira a partir do campo em questão.
+    </p>
+    <p>
+        O último parâmetro pode definir a altura da linha onde o mesmo se encontra. Para isto,
+basta especificar Hn onde n é a altura. Esta definição prevalece sobre a definida na tag
+[DIM].
+    </p>
+    </div>  
+    <div class="container-titulo-barra">
+    <a>Conteúdo</a>
+    </div>
+    <!--Navigation bar-->
+    <div id="nav-placeholder">
+    </div>
+    <script>
+        $(function(){
+          $("#nav-placeholder").load("nav.html");
+        });
+        </script>
+        <!--end of Navigation bar-->
+    <script type="text/javascript">
+        /* $('.collapsable').click(function(){ $(this).parent().children().toggle();
+        $(this).toggle(); }); */
+        $( document ).ready(function() {
+        $('#identificador-ctrl-v').parent().children().toggle();
+        $('#identificador-ctrl-v').toggle();
+        $('#identificador-ctrl-v')[0].scrollIntoView(true);
+        });
+    </script>
+    </body>
+</html>

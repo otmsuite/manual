@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de Referência - HTML</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js">    
+    </script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    </head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+<body>   
+    <header class="header">
+        <nav>
+            <img src="otmsuite2.png" alt="OTMSuite">
+            <h1> Manual de Referência</h1>
+        </nav>
+   </header>    
+  <div class="conteudo-exp">
+    <h1>[PDF]</h1>
+     <p>
+        Apresenta arquivo .PDF em uma interface padrão
+    </p>
+    <h2>Sintaxe da notação</h2>
+    <p><code>[identificação do arquivo]</code></p>
+    <h2>sintaxe da notação</h2>
+    <p>
+        <code>[identificação do arquivo .PDF ^ opções da barra de ferramentas]</code>
+    </p>
+    <h2>detalhe</h2>
+    <p>
+        Opções para habilitar botões na barra de ferramentas do PDF:
+    </p>
+    <p>
+        <ul>
+            <li>
+                S - Salvar como
+            </li>
+            <li>
+                P - Imprimir
+            </li>
+            <li>
+                F - Localizar
+            </li>
+            <li>
+                O - Painel de opções
+            </li>
+            <li>
+                N - Navegação de páginas
+            </li>
+            <li>
+                Z - Zoom
+            </li>
+            <li>
+                A - Ajuste de página
+            </li>
+            <li>
+                R - Rotação de página
+            </li>
+            <li>
+                T - Ferramentas
+            </li>
+            <li>
+                L - Label de numeração de página
+            </li>  
+            <li>
+                V - Modo de visualização
+            </li>  
+        </ul>
+    </p>
+    <h2>Exemplo</h2>
+    <p>
+      <code>[PDF] PDF_001 ; 20; 20; 800; 590; ; [TOOLS/MODELO_M ^ PFNZARTLV]</code>
+    </p>
+    <img src="" alt="img de exemplo">
+
+    </div>
+    <div class="container-titulo-barra">
+    <a>Conteúdo</a>
+    </div>
+    <!--Navigation bar-->
+    <div id="nav-placeholder">
+    </div>
+    <script>
+        $(function(){
+          $("#nav-placeholder").load("nav.html");
+        });
+        </script>
+        <!--end of Navigation bar-->
+    <script type="text/javascript">
+        /* $('.collapsable').click(function(){ $(this).parent().children().toggle();
+        $(this).toggle(); }); */
+        $( document ).ready(function() {
+        $('#imagens').parent().children().toggle();
+        $('#imagens').toggle();
+        $('#imagens')[0].scrollIntoView(true);
+        });
+    </script>
+    </body>
+</html>

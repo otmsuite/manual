@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de Referência - HTML</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js">    
+    </script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    </head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+<body>   
+    <header class="header">
+        <nav>
+            <img src="otmsuite2.png" alt="OTMSuite">
+            <h1> Manual de Referência</h1>
+        </nav>
+   </header>    
+  <div class="conteudo-exp">
+    <h1>[IMG_MOV]</h1>
+     <p>
+        Define ação associada ao movimento do mouse sobre o segmento da imagem indexada.
+    </p>
+    <h2>Pintar segmento com a cor/efeito definido    </h2>
+    <h3>Sintaxe da notação</h3>
+    <p>
+        <code>
+            [IMG_MOV] elemento; segmento; ; [R-G-B - Efeito]
+        </code>
+    </p>
+    <h2>Alterar outro(s) elemento(s) do painel</h2>
+    <h3>Sintaxe</h3>
+    <p>
+        <code>[IMG_MOV] elemento; segmento; elemento a alterar; [conteúdo do elemento a alterar] </code>
+    </p>
+    <h2>Executar .MKQ</h2>
+    <h3>Sintaxe</h3>
+    <p>
+      <code>[IMG_MOV] elemento; segmento; elemento de referência; [@>MKQ arquivo .MKQ]</code>
+    </p>
+    <h2>Exemplo</h2>
+    <p>
+        O exemplo abaixo utiliza a primeira e a segunda sintaxe.
+    </p>
+    <p>
+        <code>
+            [MKP] Teste ; 0; 0; 1430; 610; BCO; 1600x900; 0; 0; <br>
+            [PIC] PIC_001 ; 800; 50; 200; 200; 229-245-251; [%SVGD/otmsuite|@ ^ N ^ Atualiza gráficos] <br>
+            ---- Define IMAGEM indexada <br>
+            [IMG] IMG_001 ; 200; 50; 500 ; 500; 000-000-000; [Brasil] <br>
+            --Uso da primeira sintaxe <br>
+            [IMG_MOV] IMG_001 ; ; ; [000-000-000-4]
+            --Uso da segunda sintaxe <br>
+            [IMG_MOV] IMG_001 ; ; PIC_001 ;[#select case when 'X[ORI]'='X' then '%SVGD/otmsuite|@ ^ N ^ Atualiza gráficos' else '%SVGL/'||substr('[ORI]',1,1) end from dual]
+        </code>
+    </p>
+    <img src="" alt="img de exemplo">
+    </div>
+    <div class="container-titulo-barra">
+    <a>Conteúdo</a>
+    </div>
+    <!--Navigation bar-->
+    <div id="nav-placeholder">
+    </div>
+    <script>
+        $(function(){
+          $("#nav-placeholder").load("nav.html");
+        });
+        </script>
+        <!--end of Navigation bar-->
+    <script type="text/javascript">
+        /* $('.collapsable').click(function(){ $(this).parent().children().toggle();
+        $(this).toggle(); }); */
+        $( document ).ready(function() {
+        $('#imagens').parent().children().toggle();
+        $('#imagens').toggle();
+        $('#imagens')[0].scrollIntoView(true);
+        });
+    </script>
+    </body>
+</html>

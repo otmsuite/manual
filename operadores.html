@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de Referência - HTML</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js">    
+    </script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    </head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+<body>   
+    <header class="header">
+        <nav>
+            <img src="otmsuite2.png" alt="OTMSuite">
+            <h1> Manual de Referência</h1>
+        </nav>
+   </header>    
+  <div class="conteudo-exp">
+    <h1>Operadores</h1>
+     <p>
+        A OTMSuite possui alguns operadores e caracteres especiais utilizados em vários
+        contextos.
+     </p>
+     <h2>Limites de condicional</h2>
+     <p>
+        As chamadas condicionais globais (resolvidas logo na primeira leitura do arquivo) são
+        delimitadas por <code>##> <##</code>.
+     </p>
+     <p>
+        As condicionais internas (resolvidas no início da execução de cada bloco) são delimitadas
+        por <code>#> <#</code>.        
+     </p>
+     <h2>Seleção Múltipla (PLE OU FK)</h2>
+     <p>
+        * (asterisco) permite que múltiplos registros sejam selecionados.
+     </p>
+     <h2>Totalizadores no grid</h2>
+     <p>
+        <code>@S</code>, <code>@C</code>, <code>@A</code>, <code>@M</code>, <code>@N</code>
+     </p>
+     <h2>Conteúdo da célula</h2>
+     <p>
+         <code>!!!</code> define que a célula não terá seu conteúdo editável
+     </p>
+     <p>
+        <code>@@@</code> Define que a célula não será navegável por enter/tab, exceto se vier de outra célula
+        com <code>@@@</code>:
+     </p>
+     <h2>Tooltip e TX de múltiplas linhas</h2>
+     <p>
+        <code>chr(7)</code>/<code>(BEL)</code> pode ser utilizado entre dois valores, em determinada célula do grid, para informar que ela terá tooltip.
+     </p>
+     <p>
+        O primeiro valor será o conteúdo da célula e o segundo será o tooltip.
+     </p>
+     <p>
+        O <code>BEL</code> pode ser utilizado no label do TX para definir que o mesmo será de múltiplas linhas
+        (caixa de texto).
+     </p>
+     <h2>Chamadas de MKQ</h2>
+     <p>
+        <code>*</code>, <code>+</code>, <code>-</code>, <code>#</code>, <code>$</code>
+     </p>
+     <h2>Separador utilizado em FK e REFRESH</h2>
+     <p>
+        <code>chr(9)</code>
+     </p>
+     <h2>Estrutura de tópicos</h2>
+     <p>
+         <code>+-</code> como nome de coluna para definir que será uma estrutura de tópicos. <br>
+     </p>
+     <p>
+        <code>!@!</code> no início da célula (da coluna +-) para definir que o nível iniciará recolhido. 
+     </p>
+    </div>
+    <div class="container-titulo-barra">
+    <a>Conteúdo</a>
+    </div>
+    <!--Navigation bar-->
+    <div id="nav-placeholder">
+    </div>
+    <script>
+        $(function(){
+          $("#nav-placeholder").load("nav.html");
+        });
+        </script>
+        <!--end of Navigation bar-->
+    <script type="text/javascript">
+        /* $('.collapsable').click(function(){ $(this).parent().children().toggle();
+        $(this).toggle(); }); */
+        $( document ).ready(function() {
+        $('#qr-code').parent().children().toggle();
+        $('#qr-code').toggle();
+        $('#qr-code')[0].scrollIntoView(true);
+        });
+    </script>
+    </body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de Referência - HTML</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js">    
+    </script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    </head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+<body>   
+    <header class="header">
+        <nav>
+            <img src="otmsuite2.png" alt="OTMSuite">
+            <h1> Manual de Referência</h1>
+        </nav>
+   </header>    
+  <div class="conteudo-exp">
+    <h1>[TIT]</h1>
+     <p>
+        Define o título a ser apresentado na tela que receberá parâmetros.
+    </p>
+    <p>
+        Normalmente esta tag não recebe validações, uma vez que quando a mesma é apresentada os
+parâmetros ainda não foram respondidos.
+    </p>
+    <p>
+        Se o texto finalizar com o caracter #, ao fechar a janela no botão vermelho no topo esquerdo da
+tela, uma mensagem de confirmação será solicitada.
+    </p>
+    <h2>Exemplo de código</h2>
+    <p> 
+        <code>[TIT] <br>
+            Título da janela# <br> <br>
+            [SQL] <br>
+            select id “$ID#10”, ID “Código#2”, Texto “Descrição#9$1”, Numero “Valor#N8$4@S” <br>
+            from tmp_teste_edt X <br>
+            order by id</code>
+    </p>
+    <h2>Exemplo na plataforma</h2>
+    <img src="" alt="Exemplo TIT">
+    </div>  
+    <div class="container-titulo-barra">
+    <a>Conteúdo</a>
+    </div>
+    <!--Navigation bar-->
+    <div id="nav-placeholder">
+    </div>
+    <script>
+        $(function(){
+          $("#nav-placeholder").load("nav.html");
+        });
+        </script>
+        <!--end of Navigation bar-->
+    <script type="text/javascript">
+        /* $('.collapsable').click(function(){ $(this).parent().children().toggle();
+        $(this).toggle(); }); */
+        $( document ).ready(function() {
+        $('#tit').parent().children().toggle();
+        $('#tit').toggle();
+        $('#tit')[0].scrollIntoView(true);
+        });
+    </script>
+    </body>
+</html>

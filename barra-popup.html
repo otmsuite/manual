@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de Referência - HTML</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js">    
+    </script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    </head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+<body>   
+    <header class="header">
+        <nav>
+            <img src="otmsuite2.png" alt="OTMSuite">
+            <h1> Manual de Referência</h1>
+        </nav>
+   </header>    
+  <div class="conteudo-exp">
+    <h1>[$BARRA$] e [$POPUP$]</h1>
+     <p>
+        São palavras reservadas que ditam o funcionamento dos botões. A palavra reservada
+        [$BARRA$] na validação do botão, quando usada sozinha, faz com que o botão apareça
+        somente na barra de busca do grid. Já a [$POPUP$] por sua vez, faz com que seja visível
+        no botão direito do mouse.
+     </p>
+     <p>
+        Caso nenhuma das palavras reservadas seja utilizada, o botão aparecerá tanto na barra
+        quanto no botão direito do mouse.
+        Após a definição da localização dos botões, na validação, é possível utilizar os parâmetros
+        internos [$LIN$], [$COL$], [$COLNAME$], [$CELL$] e [PLE].
+     </p>
+    </div>
+    <div class="container-titulo-barra">
+    <a>Conteúdo</a>
+    </div>
+    <!--Navigation bar-->
+    <div id="nav-placeholder">
+    </div>
+    <script>
+        $(function(){
+          $("#nav-placeholder").load("nav.html");
+        });
+        </script>
+        <!--end of Navigation bar-->
+    <script type="text/javascript">
+        /* $('.collapsable').click(function(){ $(this).parent().children().toggle();
+        $(this).toggle(); }); */
+        $( document ).ready(function() {
+        $('#identificador-ctrl-v').parent().children().toggle();
+        $('#identificador-ctrl-v').toggle();
+        $('#identificador-ctrl-v')[0].scrollIntoView(true);
+        });
+    </script>
+    </body>
+</html>

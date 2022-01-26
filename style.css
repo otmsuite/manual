@@ -1,0 +1,164 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a { 
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+}
+
+.header { 
+    width: 100%;
+    background-color: #e4e4e4 ;
+    padding: 5px 0;   
+    position: relative;
+    font-size: 12px;
+
+}
+
+.header nav {
+    max-width: 1200px; 
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    align-items: center;    
+}
+
+.header h1 {
+    font-size: 14px;
+    color: #143C67;
+ }
+
+.container-titulo-barra {
+    position: relative;
+    background-color: #143C67;
+    width: 290px;
+    padding: 0px;
+    text-align: center;
+}
+
+.container-titulo-barra {
+    font-size: 15px;
+    color: white;
+}
+
+.conteudo-barra {
+    overflow: auto;
+    padding: 0px;
+    width: 290px;
+    height: 100%;
+    background-color: #e4e4e4;
+}
+
+.conteudo-barra a {
+    color: #143C67;
+    padding: 3px;
+    display: flex;
+    border-radius: 5px;
+}
+
+.conteudo-barra li {
+    padding: 5px;
+    line-height: 30px;
+    font-size: 14px;
+}
+
+.conteudo-barra a:hover {
+    background-color: #999999;
+    color:white;
+}
+
+/* estilos para a parte de explicação */
+
+.conteudo-exp { 
+    margin-top: 2.5rem;
+    margin-left:310px;
+    top: 0%;
+    position: absolute;
+}
+
+.conteudo-exp h1 {
+    padding: 15px 0px;
+    font-size: 20px;
+    color: #143C67;
+}
+
+.conteudo-exp h2 {
+    font-size: 15px;
+    padding-bottom: 5px;
+    color: #143C67;
+
+}
+
+.conteudo-exp h3 {
+    font-size: 13px;
+    /* padding-bottom: 5px; */
+    padding: 3px 0px;
+    color: #143C67;
+
+}
+
+
+.conteudo-exp li {
+    font-size:14px;
+    padding-bottom: 8px;
+    max-width: 850px;
+}
+
+
+.conteudo-exp p {
+    text-align:justify-content;
+    font-size:13px;
+    padding-bottom: 10px;
+    max-width: 850px;
+}
+
+.conteudo-exp span {
+    font-weight: 600;
+}
+
+.conteudo-exp img {
+    margin:10px 0px;
+    max-width: 600px;
+}
+
+.spacing {
+    margin-left: 10px;
+}
+
+.p-spacing {
+    margin-left: 10px; 
+}
+
+.img {
+    text-align: center;
+}
+
+.exemplo-dim {
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    display: flex;
+}
+
+/* .retangulo-1 {
+    margin-top: 10px;
+    background-color: #2ac9d9;
+    width: 200px;
+    height: 100px;
+}
+
+.ret-text {
+    color:white;
+    text-align: center;
+
+} */

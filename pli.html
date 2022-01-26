@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de Referência - HTML</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js">    
+    </script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    </head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+<body>   
+    <header class="header">
+        <nav>
+            <img src="otmsuite2.png" alt="OTMSuite">
+            <h1> Manual de Referência</h1>
+        </nav>
+   </header>    
+  <div class="conteudo-exp">
+    <h1>[PLI]</h1>
+     <p>
+        Bloco a ser executado antes da tag [SQL] (e após a tag [PAR], caso a mesma exista).
+    </p>
+    <p>
+        Este bloco pode possuir diversos comandos @> que podem ser executados e validados por
+        #> <#
+    </p>
+    <p>
+        Quando não definido, o comando @>SQL é assumido como default.
+    </p>
+    <p>
+        Este bloco pode possuir diversos comandos @> que podem ser executados e validados por
+        #> <#. Quando não definido, o comando @>SQL é assumido como default.
+    </p>
+    <h2> Exemplo de código</h2>
+    <p>
+        <code>
+            #> ‘[$OPCAO$]’ = ‘$%OPCAO%$’<# <br>
+            [OPC]<br>
+            DEL: %SVGI/md-close-circle-outline : Excluir Item : N <br><br>
+            [PLE] <br>
+            *ID#0 <br><br>
+            [PLF] <br>
+            @>MKQ <br>
+            +exemplosEOT[$OPCAO$]EOT[OPC]EOT[$ID$]EOT[PLE] <br><br>
+            [PLI] <br>
+            #> ‘[$OPCAO$]’ = ‘DEL’ <# <br>
+            begin <br>
+            delete titens where id = [$ID$]; <br>
+            end; <br><br>
+            [SQL] <br>
+            select id “ID#0”, desc_tecnica “Descrição#90” from titens
+        </code>
+    </p>
+    </div>
+    <div class="container-titulo-barra">
+    <a>Conteúdo</a>
+    </div>
+    <!--Navigation bar-->
+    <div id="nav-placeholder">
+    </div>
+    <script>
+        $(function(){
+          $("#nav-placeholder").load("nav.html");
+        });
+        </script>
+        <!--end of Navigation bar-->
+    <script type="text/javascript">
+        /* $('.collapsable').click(function(){ $(this).parent().children().toggle();
+        $(this).toggle(); }); */
+        $( document ).ready(function() {
+        $('#pli').parent().children().toggle();
+        $('#pli').toggle();
+        $('#pli')[0].scrollIntoView(true);
+        });
+    </script>
+    </body>
+</html>

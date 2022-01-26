@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de Referência - HTML</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js">    
+    </script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    </head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+<body>   
+    <header class="header">
+        <nav>
+            <img src="otmsuite2.png" alt="OTMSuite">
+            <h1> Manual de Referência</h1>
+        </nav>
+   </header>    
+  <div class="conteudo-exp">
+    <h1>[PDF]</h1>
+     <p>
+        Permite estabelecer definições para a geração do arquivo PDF. Se não informado,
+        definições padrões serão assumidas. As seguintes definições podem ser estabelecidas
+        nesta tag:
+    </p>
+    <p class="spacing">
+        <ul>
+            <li> C - define fonte do cabeçalho </li>
+            <li> R - define fonte do rodapé </li>
+            <li> S - dimensão do papel </li>
+            <li> O - orientação (retrato ou paisagem) </li>
+            <li> M - margens (esquerda, direita, superior, inferior) </li>
+            <li> Z - indica se deve ou não zebrar as linhas do relatório </li>
+            <li> F - define fonte dos dados do relatório (se alguma célula
+                possuir definição de fonte, será respeitada a definição)</li>
+            <li> H - indica se altura da linha deve ser automática
+                (auto-ajustada) ou se deve obedecer a altura definida na
+                tabela de dados</li>
+            <li> V - indica se, além de gerar na área temporária, deve exibir o
+                mesmo na tela</li>
+        </ul>
+    </div>
+    <div class="container-titulo-barra">
+    <a>Conteúdo</a>
+    </div>
+    <!--Navigation bar-->
+    <div id="nav-placeholder">
+    </div>
+    <script>
+        $(function(){
+          $("#nav-placeholder").load("nav.html");
+        });
+        </script>
+        <!--end of Navigation bar-->
+    <script type="text/javascript">
+        /* $('.collapsable').click(function(){ $(this).parent().children().toggle();
+        $(this).toggle(); }); */
+        $( document ).ready(function() {
+        $('#identificador-ctrl-v').parent().children().toggle();
+        $('#identificador-ctrl-v').toggle();
+        $('#identificador-ctrl-v')[0].scrollIntoView(true);
+        });
+    </script>
+    </body>
+</html>

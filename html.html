@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de Referência - HTML</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js">    
+    </script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    </head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+<body>   
+    <header class="header">
+        <nav>
+            <img src="otmsuite2.png" alt="OTMSuite">
+            <h1> Manual de Referência</h1>
+        </nav>
+   </header>    
+  <div class="conteudo-exp">
+    <h1>HTML</h1>
+     <p>
+        Alguns componentes da plataforma OTMSuite permitem que utilizemos html. São eles:
+    </p>
+    <h3>GRID</h3>
+    <p>
+        Para utilização no grid é só definir o conteúdo da célula como <code>&ltHTML&gt&ltBODY&gtConteúdo&lt/BODY&gt&lt/BODY&gt</code>.
+    </p>
+     <h3>TIT/CAB</h3>
+     <p>
+        Apenas adicionar o html.
+     </p>
+     <h2>Exemplo</h2>
+    <code>[SQL] <br>
+        select to_char(A), to_char(B), <br>
+    '<HTML><BODY>'|| <br>
+      '&ltfont style="background-color:rgba(0,0,0,0.0); " face="courier new"; size="4"&gt'||
+        replace(trim(lpad('X',A-1,'X')),'X',chr(38)||'nbsp;') ||'&lt/font&gt'|| <br>
+       '&ltfont style="background-color:#0000ff;" face="courier new"; size="4"; 
+        color="#0000ff">'|| <br>
+                trim(lpad('X',B-A+1,'X'))||'</font&gt'|| <br>
+            '&lt/BODY&gt&lt/HTML&gt' Barra <br>
+        from (
+        select A, trunc(DBMS_RANDOM.VALUE(A,100)) B <br>
+        from (select trunc(DBMS_RANDOM.VALUE(0,80)) A from dual connect by level 100)
+        )</code>
+    <p></p>
+    <p>
+        Nota: As versões de HTML e CSS suportadas são respectivamente 3.2 (Wilbur) e 1.0
+(conforme o suportado pelo Java Swing)
+    </p>
+    </div>
+    <div class="container-titulo-barra">
+    <a>Conteúdo</a>
+    </div>
+    <!--Navigation bar-->
+    <div id="nav-placeholder">
+    </div>
+    <script>
+        $(function(){
+          $("#nav-placeholder").load("nav.html");
+        });
+        </script>
+        <!--end of Navigation bar-->
+    <script type="text/javascript">
+        /* $('.collapsable').click(function(){ $(this).parent().children().toggle();
+        $(this).toggle(); }); */
+        $( document ).ready(function() {
+        $('#imagens').parent().children().toggle();
+        $('#imagens').toggle();
+        $('#imagens')[0].scrollIntoView(true);
+        });
+    </script>
+    </body>
+</html>

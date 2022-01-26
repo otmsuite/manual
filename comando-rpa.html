@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de Referência - HTML</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js">    
+    </script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    </head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+<body>   
+    <header class="header">
+        <nav>
+            <img src="otmsuite2.png" alt="OTMSuite">
+            <h1> Manual de Referência</h1>
+        </nav>
+   </header>    
+  <div class="conteudo-exp">
+    <h1>@>RPA</h1>
+     <p>
+        Executa script seguindo sintaxe do AutoHotKey. 
+        Obs: No momento, o comando só está disponível para o sistema operacional Windows.
+    </p>
+    <p>
+        É possível passar parâmetros dentro de { }, separados por ; no início do script.
+    </p>
+    <p>
+        <h2>Parâmetros disponíveis:</h2>
+        <ul>
+            <li><code>W - aguarda a execução;</code></li>
+            <li><code>I - interrompe no caso de erro;</code></li>
+            <li><code>L - limpa a otm_mensagem de acordo com o tipo passado;</code></li>
+            <li><code>M : Mensagem de erro - no caso de erro, mostra a mensagem definida;</code></li>
+            <li><code>T : Tipo - no caso de erro, grava na otm_mensagem com o tipo definido.</code></li>
+        </ul>
+    </p>
+    <h2>Exemplo de código</h2>
+    <p>
+        <code>[PLF] <br>
+            @>RPA <br>
+            {W;I;L;M:Ocorreu um erro!;T:OTM_RPA} <br>
+            ;Apresenta uma mensagem <br> 
+            msgbox, Mensagem de teste</code>
+    </p>
+    </div>  
+    <div class="container-titulo-barra">
+    <a>Conteúdo</a>
+    </div>
+    <!--Navigation bar-->
+    <div id="nav-placeholder">
+    </div>
+    <script>
+        $(function(){
+          $("#nav-placeholder").load("nav.html");
+        });
+        </script>
+        <!--end of Navigation bar-->
+    <script type="text/javascript">
+        /* $('.collapsable').click(function(){ $(this).parent().children().toggle();
+        $(this).toggle(); }); */
+        $( document ).ready(function() {
+        $('#comandos').parent().children().toggle();
+        $('#comandos').toggle();
+        $('#comandos')[0].scrollIntoView(true);
+        });
+    </script>
+    </body>
+</html>

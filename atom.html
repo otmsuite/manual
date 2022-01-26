@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de Referência - HTML</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js">    
+    </script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    </head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+<body>   
+    <header class="header">
+        <nav>
+            <img src="otmsuite2.png" alt="OTMSuite">
+            <h1> Manual de Referência</h1>
+        </nav>
+   </header>    
+  <div class="conteudo-exp">
+    <h1>Atom</h1>
+    <p>
+        Robusto, dinâmico e poderoso. Este editor conta com diversos facilitadores que possibilitam um desenvolvimento e um workflow mais fluído. Recomendado para desenvolvedores
+        inciantes e para aqueles que não gostam de decorar sintaxes.
+    </p>
+    <p>
+        Na barra de conteúdo, navegue pelas características do Atom.
+    </p>
+    <!-- <p>
+        Confira as suas características:
+        <ul>
+            <li>
+                <a href="packages.html">Packages</a>
+            </li>
+            <li>
+                <a href="color-picker.html">Color picker</a>
+            </li>
+            <li>
+                <a href="temas.html">Temas</a>
+            </li>
+            <li>
+                <a href="snippets.html">Snippets</a>
+            </li>
+            <li>
+                <a href="outras-funcionalidades.html">Outras funcionalidades</a>
+            </li>
+        </ul> 
+    </p> -->
+    <h2>Instalação e configuração</h2>
+    <p>
+        Para baixar o Atom, vá até <a href="https://atom.io/" target="_blank">atom.io</a> e clique em download. 
+    </p>
+    <p class="img"><img src="imagens/atom-io.png" alt="Página principal do site atom.io"></p>
+    <p>
+        A instalação do Atom é automática, basta executar seu instalador. O programa será iniciado ao término da instalação. 
+    </p>
+    <h2>Packages</h2>
+    <p>
+        Por padrão o Atom não justifica o seu uso no desenvolvimento de aplicações para a OTMSuite, uma vez que é consideravelmente mais pesado do que o <a href="notepad.html">Notepad++</a>. Para fazer sentido optar por este editor, foram desenvolvidos três pacotes personalizados com foco na experiência do usuário, especialmente na otimização de tempo de aprendizado e desenvolvimento. São eles: <span>otmsuite-utils</span>, <span>language-mkq</span> e  <span>language-mkp</span>.
+    </p>
+    <p>
+        Para seu pleno funcionamento apenas um destes pacotes é de uso obrigatório, o <span>otmsuite-utils</span>, mas recomenda-se o uso dos três para uma experiência completa e facilitada.
+    </p>
+    </div>
+    <div class="container-titulo-barra">
+    <a>Conteúdo</a>
+    </div>
+    <!--Navigation bar-->
+    <div id="nav-placeholder">
+    </div>
+    <script>
+        $(function(){
+          $("#nav-placeholder").load("nav.html");
+        });
+        </script>
+        <!--end of Navigation bar-->
+    <script type="text/javascript">
+        /* $('.collapsable').click(function(){ $(this).parent().children().toggle();
+        $(this).toggle(); }); */
+        $( document ).ready(function() {
+        $('#atom').parent().children().toggle();
+        $('#atom').toggle();
+        $('#atom')[0].scrollIntoView(true);
+        });
+    </script> 
+    </body>
+</html>
+ 

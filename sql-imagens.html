@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de Referência - HTML</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js">    
+    </script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    </head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+<body>   
+    <header class="header">
+        <nav>
+            <img src="otmsuite2.png" alt="OTMSuite">
+            <h1> Manual de Referência</h1>
+        </nav>
+   </header>    
+  <div class="conteudo-exp">
+    <h1>UNION_TABLE_n</h1>
+     <p>
+        Uma imagem pode ser apresentada nas células do grid usando a sintaxe: 
+    </p>
+    <h2>Sintaxe</h2>
+    <p>
+        <code> #IMG^Nome_da_imagem^W^H </code>
+    </p>
+    <p>
+        W e H, quando não informados, assumem default de 19x19.
+    </p>
+    <p>
+        Ao informar W e H poderá ser necessário aumentar a altura da linha (tag [DIM]).
+    </p>
+    <p>
+        Não é possível uso conjunto com colunas fixas ([DIM]).
+    </p>
+    <h2>Exemplo de código</h2>
+     <p>
+        <code>
+            [SQL] <br>
+            select id “ID#10”, ‘{{X-X-X/X-X-X/Tahoma-0-14/H35}}’||descricao “Documento#90”, <br>
+            decode(pf_pj,0, ‘FÍSICA’, ‘JURÍDICA’) “Pessoa#40”, <br>
+            ‘#IMG^%SVGD/X|’||decode(doc_obrigatorio, 0, ‘VRM’, ‘VDE’)||‘^22^22’ “Obrigatório#15” <br>
+            from hyv_tipo_doc_tb
+        </code>
+    </p>
+    <h2> Exemplo na plataforma </h2>
+    <img src="imagens/ldi-open.png" alt="lista de imagens"> 
+    </div>
+    <div class="container-titulo-barra">
+    <a>Conteúdo</a>
+    </div>
+    <!--Navigation bar-->
+    <div id="nav-placeholder">
+    </div>
+    <script>
+        $(function(){
+          $("#nav-placeholder").load("nav.html");
+        });
+        </script>
+        <!--end of Navigation bar-->
+    <script type="text/javascript">
+        /* $('.collapsable').click(function(){ $(this).parent().children().toggle();
+        $(this).toggle(); }); */
+        $( document ).ready(function() {
+        $('#sql-union-table').parent().children().toggle();
+        $('#sql-union-table').toggle();
+        $('#sql-union-table')[0].scrollIntoView(true);
+        });
+    </script>
+    </body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de Referência - HTML</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js">    
+    </script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    </head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+<body>   
+    <header class="header">
+        <nav>
+            <img src="otmsuite2.png" alt="OTMSuite">
+            <h1> Manual de Referência</h1>
+        </nav>
+   </header>    
+  <div class="conteudo-exp">
+    <h1>[EDT]</h1>
+    <p>
+        Esta tag permite definir regras de edição de colunas na tela de grid. <br>
+        Ao clicar no botão de retornar (existente na tela de grid) durante uma edição, a mesma
+        será cancelada. <br>
+    </p>
+    <h2>Sintaxe</h2>
+    <p>
+        <code>ID:TYPE:LENGTH:PARAMETERS:TABLE_NAME:COLUMN_NAME:USER_DESCRIPTION:REFRESH</code> <br><br>
+        Seu conteúdo varia de acordo com o tipo de dado da coluna a ser editada (CK, FK, DT, TX,
+        NM, DC, PW, XX). <br><br>
+    </p>
+    <h2> Exemplo de código</h2>
+    <p>
+        <code>
+            [EDT] <br>
+            1: TX: 100 : :TITENS : DESC_TECNICA ::R <br><br>
+            [SQL] <br>
+            select id "id#20", desc_tecnica "Descrição#80$1" from titens
+        </code>
+    </p>
+    <h2> Exemplo na plataforma</h2>
+    <p>
+        <img src="imagens/edt.png" alt="exemplo tag edt">
+    </p>
+    <div>
+    </div>
+    </div>
+    <div class="container-titulo-barra">
+    <a>Conteúdo</a>
+    </div>
+    <!--Navigation bar-->
+    <div id="nav-placeholder">
+    </div>
+    <script>
+        $(function(){
+          $("#nav-placeholder").load("nav.html");
+        });
+        </script>
+        <!--end of Navigation bar-->
+    <script type="text/javascript">
+        /* $('.collapsable').click(function(){ $(this).parent().children().toggle();
+        $(this).toggle(); }); */
+        $( document ).ready(function() {
+        $('#edt').parent().children().toggle();
+        $('#edt').toggle();
+        $('#edt')[0].scrollIntoView(true);
+        });
+    </script>
+    </body>
+</html>
+ 

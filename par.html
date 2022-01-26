@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de Referência - HTML</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js">    
+    </script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    </head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+<body>   
+    <header class="header">
+        <nav>
+            <img src="otmsuite2.png" alt="OTMSuite">
+            <h1> Manual de Referência</h1>
+        </nav>
+   </header>    
+  <div class="conteudo-exp">
+    <h1>[PAR]</h1>
+     <p>
+        Esta tag, juntamente com a tag [SQL] é uma das principais funcionalidades do MKQ. Ela permite a criação de uma interface de entrada de dados para o usuário (tela de parâmetros).
+    </p>
+     <p>
+        Os comandos definidos em Tipos de Parâmetros (FL, CK, FK, DT, TX, NM, DC, PW) são
+        utilizados nesta tag.
+     </p>
+     <p>
+        Para isso, utilizamos +> para iniciar cada definição de botão do [OPP].
+        OBS: Não há a necessidade de utilizar +> se todas definições do [OPP] forem de uma única
+        linha cada.
+     </p>
+     <h2>Exemplo de código</h2>
+     <p>
+        <code>
+            [OPP] <br>
+            #> instr(‘[$$$]’, “$$$”) = 0 and ‘[$$$]’ <> ‘0’ <# ><br>
+            +>HIDDEN: %SVGF/solid/list-ol : Listar todos os itens : Sair
+        </code>
+     </p>
+     <h2>Exemplo na plataforma</h2>
+    </div>
+    <div class="container-titulo-barra">
+    <a>Conteúdo</a>
+    </div>
+    <!--Navigation bar-->
+    <div id="nav-placeholder">
+    </div>
+    <script>
+        $(function(){
+          $("#nav-placeholder").load("nav.html");
+        });
+        </script>
+        <!--end of Navigation bar-->
+    <script type="text/javascript">
+        /* $('.collapsable').click(function(){ $(this).parent().children().toggle();
+        $(this).toggle(); }); */
+        $( document ).ready(function() {
+        $('#identificador-ctrl-v').parent().children().toggle();
+        $('#identificador-ctrl-v').toggle();
+        $('#identificador-ctrl-v')[0].scrollIntoView(true);
+        });
+    </script>
+    </body>
+</html>

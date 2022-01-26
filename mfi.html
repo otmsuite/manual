@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de Referência - HTML</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js">    
+    </script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    </head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+<body>   
+    <header class="header">
+        <nav>
+            <img src="otmsuite2.png" alt="OTMSuite">
+            <h1> Manual de Referência</h1>
+        </nav>
+   </header>    
+  <div class="conteudo-exp">
+    <h1>[MFI]</h1>
+     <p>
+        Mensagem condicional a ser executada antes da execução de [PLF]. <br>
+        Caso seja necessário que a mensagem seja exibida somente após o clique em algum botão
+        do grid, a tag [PLE] se faz necessária.
+     </p>
+     <h2>Exemplo de código</h2>
+     <p>
+        <code>
+            [OPC]
+            OPC01: %SVGF/solid/check : Confirmar : S <br><br>
+            [MFI]<br>
+            #> '[OPC]' = 'OPC01' <#<br>
+            Executar ação selecionada?<br><br>
+            [PLE]<br>
+            ID#0<br><br>
+            [PLF]<br>
+            #> '[OPC]' = 'OPC01' <#<br>
+            begin<br>
+            update titens set desc_tecnica = 'atualizou' where id = [PLE];<br>
+            commit;<br>
+            end;<br><br>
+            [SQL]<br>
+            select id "ID#0", desc_tecnica "Descrição#80" from titens<br>
+        </code>
+     </p>
+     <h2>Label</h2>
+     <p>
+        Label Texto a ser apresentado ao passar com o cursor sobre a opção no cabeçalho
+     </p>
+     <h2>Texto</h2>
+     <p>
+        Texto a ser apresentado ao passar com o cursor sobre a opção no rodapé (quando a opção estiver selecionada)
+    </p>
+    <h2>Tipo</h2>
+     <p>
+        Tipo de processo a ser executado quando a opção for selecionada. Podem ser:
+    </p>
+     <ul class="spacing">
+         <li>
+            <h3>MENU</h3>
+            Indica a existência de um sub-menu na linha seguinte.
+        </li>
+        <li>
+            <h3>EXE</h3>
+            Executa OPCAO de acordo com a extensão do arquivo acionado
+            (permite abrir, por exemplo, XLSX, PDF, JPG, EXE, BAT, etc).
+        </li>
+        <li>
+            <h3>MKQ</h3>
+            Executa arquivo do tipo MKQ (MakeQuery).
+        </li>
+        <li>
+            <h3>WWW</h3>
+            Acessa o site contido em OPCAO.
+        </li>
+        <li>
+            <h3>MKP</h3>
+        <li>
+            Executa arquivo do tipo MKP (MakePanel) internamente no menu.
+        </li>
+        <li>
+            <h3>MKPT</h3>
+            Executa arquivo do tipo MKP (MakePanel) em tela cheia, sobrepondo o menu.
+        </li>
+        <li>
+            <h3>HLP</h3>
+            Abre arquivo PDF (pasta Help) referente à aplicação que está ativa
+            (na barra inferior do menu);<br>
+            Tipos EXE não abrem arquivos de HELP (pois não permanecem na
+            barra inferior do menu);<br>
+            Os arquivos devem ser denominados no padrão TIPO_OPCAO
+            (substituindo possíveis caracteres / e : por _ ); <br>
+            MKQ:Teste ficará, portanto, MKQ_Teste.PDF <br>
+            MKQ:Pasta/Controle ficará MKQ_Pasta_Controle.PDF
+        </li>
+     </ul>
+    </p>
+    </p>
+    </div>
+    <div class="container-titulo-barra">
+    <a>Conteúdo</a>
+    </div>
+    <!--Navigation bar-->
+    <div id="nav-placeholder">
+    </div>
+    <script>
+        $(function(){
+          $("#nav-placeholder").load("nav.html");
+        });
+        </script>
+        <!--end of Navigation bar-->
+    <script type="text/javascript">
+        /* $('.collapsable').click(function(){ $(this).parent().children().toggle();
+        $(this).toggle(); }); */
+        $( document ).ready(function() {
+        $('#mfi').parent().children().toggle();
+        $('#mfi').toggle();
+        $('#mfi')[0].scrollIntoView(true);
+        });
+    </script>
+    </body>
+</html>

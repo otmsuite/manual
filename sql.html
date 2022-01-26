@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de Referência - HTML</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js">    
+    </script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    </head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+<body>   
+    <header class="header">
+        <nav>
+            <img src="otmsuite2.png" alt="OTMSuite">
+            <h1> Manual de Referência</h1>
+        </nav>
+   </header>    
+  <div class="conteudo-exp">
+    <h1>[SQL]</h1>
+     <p>
+        Instrução SQL que será executada para geração da consulta e preenchimento do grid.
+    </p>
+     <p>
+        Além de utilizar os resultantes dos parâmetros [PAR] na cláusula WHERE, podem ser
+        exploradas algumas funcionalidades como edição/formatação/totalizadores (com base no
+        label do campo) e cores/imagens (com base no conteúdo do campo).
+    </p>
+     <p>
+        Alguns labels e caracteres especiais na definição dos campos podem ser utilizados como
+        forma de explorar mais profundamente esta tag:
+        DRILL#0, REFRESH#0, $ID#0, $, #, @, [01], UNION_TABLE_n.
+     </p>
+     <p>
+        Este bloco pode possuir diversos comandos @> que podem ser executados e validados por #> <#. Quando não definido, o comando @>SQL é assumido como default.
+     </p>
+     <h2>Exemplo de código</h2>
+     <p>
+        <code>
+            [SQL] <br>
+            select ID “ID#0”, 'MKQ:Modelos/Modelo_A' DRILL#0, desc_tecnica “Descrição” from titens
+        </code>
+     </p>
+     <h2>Exemplo na plataforma</h2>
+     <img src="imagens/ldi-open.png" alt="lista de imagens"> 
+    </div>
+    <div class="container-titulo-barra">
+    <a>Conteúdo</a>
+    </div>
+    <!--Navigation bar-->
+    <div id="nav-placeholder">
+    </div>
+    <script>
+        $(function(){
+          $("#nav-placeholder").load("nav.html");
+        });
+        </script>
+        <!--end of Navigation bar-->
+    <script type="text/javascript">
+        /* $('.collapsable').click(function(){ $(this).parent().children().toggle();
+        $(this).toggle(); }); */
+        $( document ).ready(function() {
+        $('#sql').parent().children().toggle();
+        $('#sql').toggle();
+        $('#sql')[0].scrollIntoView(true);
+        });
+    </script>
+    </body>
+</html>

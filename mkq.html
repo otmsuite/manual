@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de Referência - HTML</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js">    
+    </script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    </head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+<body>   
+    <header class="header">
+        <nav>
+            <img src="otmsuite2.png" alt="OTMSuite">
+            <h1> Manual de Referência</h1>
+        </nav>
+   </header>    
+  <div class="conteudo-exp">
+    <h1>MKQ</h1>
+    <p>
+        Arquivo do tipo MakeQuery composto por um conjunto de ferramentas formado por
+        TAG’s, comandos e parâmetros.
+    </p>
+    <h1>Criando uma  aplicação</h1>
+    <p>
+       Vamos criar uma aplicação simples, mas com relevante poder.  Poderemos inserir dados através de uma tela de parâmetros, visualizá-los em um grid e fazer a exclusão de registros. Ela conterá as <span><a href="tags.html">TAG's</a></span>: <code>TIT</code>, <code>PAR</code>, <code>OPC</code>, <code>PLE</code>, <code>PLI</code>, <code>PLF</code>, <code>MFI</code> e <code>SQL</code>.
+    </p>
+    <h2>Requisitos</h2>
+    <p>
+        Para nossa aplicação funcionar, precisaremos de uma tabela simples no banco de dados com:
+    </p>
+    <p>
+        <ul>
+            <li> duas colunas: <span><code>ID</code></span> e <span><code>DESCRICAO</code></span>;</li>
+            <li> uma <span><code>SEQUENCE</code></span> para o <span><code>ID</code></span>;</li>
+            <li> uma <span><code>CONSTRAINT</code></span> do tipo <span><code>UNIQUE</code></span> para <span><code>DESCRICAO</code></span>.</li>
+        </ul>
+        
+    </p>
+    <p>
+        Caso utilize o banco de dados Oracle e, assim prefira, copie o código abaixo:
+    </p>
+    <p>
+        <code>create table aplicacao_demo (id number, descricao varchar2(100), constraint aplicacao_demo_uk unique (descricao)); </code>
+    </p>
+    <p>
+        <code>create sequence aplicacao_demo.id nocache;</code>
+    </p>
+    <h2>Código do MKQ</h2>
+    <p>
+        Obs: por boa prática, recomenda-se utilizar a primeira linha de código como comentário.
+    </p>
+    <p>
+        Vamos começar separando o nosso <code>MKQ</code> em três blocos: bloco geral, bloco de adição e bloco de exclusão, delimitados  por << >>.
+    </p>
+    </P>
+    <p>
+        Vamos começar o código do bloco geral com a TAG <code>TIT</code>, definindo o título da nossa aplicação  no: 
+    </p>
+    <p>
+        <code><< Bloco geral <br>
+            ##>'[$OPCAO$]' like '%$OPCAO$%'<## <br>
+            [TIT] <br>
+            Aplicação teste<br><br>
+            >>
+        </code>
+    </p>
+    <p> Antes de criarmos a tela de parâmetros, vamos criar o nosso grid com a TAG <code>SQL</code>. Recomenda-se deixá-la em último lugar no código (dentro do bloco, neste caso), mas na criação é, geralmente, a primeira TAG a ser escrito.</p>
+    <p>
+        <code><< Bloco geral <br>
+            ##>'[$OPCAO$]' like '%$OPCAO$%'<## <br>
+            [TIT] <br>
+            Aplicação teste<br> <br>
+            [SQL] <br>
+            select id "ID#20", descricao "Descrição#80"  from aplicacao_demo <br>
+            >>
+        </code>
+    </p>
+    <p>
+        Com isso, devemos obter o resultado abaixo:
+    </p>
+    <p class="img">
+        <img src="" alt="Exemplo criação de aplicação - TAG SQL">
+    </p>
+    <p>
+        Como iremos utilizar a TAG <code>OPC</code>, precisamos da TAG <code>PLE</code>:
+    </p>
+    <p>
+        
+        <code><< Bloco geral <br>
+            ##>'[$OPCAO$]' like '%$OPCAO$%'<## <br>
+            [TIT] <br>
+            Aplicação teste<br> <br>
+            [PLE] <br>
+            *ID#20 <br> <br>
+            [SQL] <br>
+            select id "ID#20", descricao "Descrição#80"  from aplicacao_demo <br>
+            >>
+        </code>
+    </p>
+    <p>
+        Vamos adicionar o botão de exclusão com a <code>TAG OPC</code>:
+    </p>
+    <p>
+        <code>
+            << Bloco geral <br>
+            ##>'[$OPCAO$]' like '%$OPCAO$%'<## <br>
+            [TIT] <br>
+            Aplicação teste<br> <br>
+            [PLE] <br>
+            *ID#20 <br> <br>
+            [OPC] <br>
+            ADD: %SVGI/md-add-circle-outline   : Adicionar registro : S <br>
+            DEL: %SVGI/md-close-circle-outline : Excluir registro : S <br> <br>
+            [SQL] <br>
+            select id "ID#20", descricao "Descrição#80"  from aplicacao_demo <br>
+            >>
+        </code> 
+    </p>
+    <p>
+        Vamos criar nossa tela de parâmetros:
+    </p>
+    <p>
+        <code>[PAR] <br>
+            [DESCRICAO]: Descrição do Item: TX350: 100 ;U
+        </code>
+        
+    </p>
+    <p>
+        Adicionando o primeiro bloco de  <code>PL/SQL</code> com a TAG <code>PLI</code>, que será responsável pela inserção de dados na tabela.<code>SQL</code>:
+    </p>
+    <p>
+        <code>[PLI] <br>
+            begin <br>
+                insert into aplicacao_demo values (aplicacao_demo.id, [DESCRICAO]); <br>
+                commit; <br>
+            end;
+            </code>
+    </p>
+    <p>
+        Adicionaremos o bloco de <code>PL/SQL</code> através da TAG <code>PLF</code>, que fará a exclusão dos dados da tabela.
+    </p>
+    <p>
+        <code>
+            [PLF] <br>
+            begin <br>
+                delete aplicaco_demo where id in ([PLE]); <br>
+                commit; <br>
+            end;
+        </code>
+    </p>
+    <p>
+        Por fim, colocaremos uma mensagem para solicitar a confirmação antes da exclusão dos dados.
+    </p>
+    <p>
+        <code>
+            [MFI] <br>
+            #> '[OPC]' = 'OPC01' <# <br>
+            Executar ação selecionada?
+        </code>
+    </p>
+    <p>
+        <code>
+            << Bloco de primeiro nível - Adição <br>
+            ##>'[$OPCAO$]' = 'ADD'<## <br> <br>
+            >>
+        </code>
+    </p>
+    <p>
+        <code>
+            << Bloco de primeiro nível - Exclusão <br
+            ##>'[$OPCAO$]' = 'DEL'<## <br> <br>
+            >>
+        </code>
+    </p>
+    <p>
+        O resultado deve ficar como na imagem abaixo:
+    </p>
+    
+    <p class="img">
+        <img src="imagens/exemplo-mkq.png" alt="Exemplo criação de menu">
+    </p>
+    <p>
+        Seu aplicação com inserção e exclusão de dados está criada! Em poucos minutos podemos atingir o resultado
+    </p>
+    </div>
+    <div class="container-titulo-barra">
+    <a>Conteúdo</a>
+    </div>
+    <!--Navigation bar-->
+    <div id="nav-placeholder">
+    </div>
+    <script>
+        $(function(){
+          $("#nav-placeholder").load("nav.html");
+        });
+        </script>
+        <!--end of Navigation bar-->
+    <script type="text/javascript">
+        /* $('.collapsable').click(function(){ $(this).parent().children().toggle();
+        $(this).toggle(); }); */
+        $( document ).ready(function() {
+        $('#myo').parent().children().toggle();
+        $('#myo').toggle();
+        $('#myo')[0].scrollIntoView(true);
+        });
+    </script>
+    </body>
+</html>
+ 

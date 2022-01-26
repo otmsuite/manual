@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de Referência - HTML</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js">    
+    </script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    </head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+<body>   
+    <header class="header">
+        <nav>
+            <img src="otmsuite2.png" alt="OTMSuite">
+            <h1> Manual de Referência</h1>
+        </nav>
+   </header>    
+  <div class="conteudo-exp">
+    <h1>@>GRF</h1>
+     <p>
+        Utilizado para gerar uma imagem de gráfico no formato .png.
+    </p>
+    <p>
+        Deve conter as seguintes informações:
+    </p>
+    <h3><ARQ></h3>
+    <p>
+        Caminho do arquivo a ser gerado;
+    </p>
+    <h3><DAD></h3>
+    <p>
+        Os dados do gráfico;
+    </p>
+    <h3><GRF></h3>
+    <p>
+        Tipo do Gráfico (BAR, LIN, PIE, ARE, TER, GAU/DAS)
+    </p>
+    <h3><COR></h3>
+    <p>
+        Cor de fundo do gráfico (R-G-B)
+    </p>
+    <h3><DIM></h3>
+    <p>
+        Dimensões da Imagem (largura , altura)
+    </p>
+    <p>
+        Para mais detalhes referentes à notação específica de cada tipo, verifique a documentação de MKPs.
+    </p>
+    <h2>Detalhe</h2>
+    <p>
+        É possível passar parâmetros dentro de { }, separados por ; no início do script.
+    </p>
+    <h2>Exemplo de código</h2>
+    <p>
+        <code>
+            [PLF] <br>
+            @>GRF <br>
+            <ARQ>%TEMP%/Grafico <br>
+            <DAD>Valor 1 = 100, Valor 2 = 200 <br>
+            <GRF>PIE <br>
+            <TIT>TITULO <br>
+            <COR>245-239-246 <br>
+            <DIM>500, 500
+        </code>
+    </p>
+    </div>  
+    <div class="container-titulo-barra">
+    <a>Conteúdo</a>
+    </div>
+    <!--Navigation bar-->
+    <div id="nav-placeholder">
+    </div>
+    <script>
+        $(function(){
+          $("#nav-placeholder").load("nav.html");
+        });
+        </script>
+        <!--end of Navigation bar-->
+    <script type="text/javascript">
+        /* $('.collapsable').click(function(){ $(this).parent().children().toggle();
+        $(this).toggle(); }); */
+        $( document ).ready(function() {
+        $('#comandos').parent().children().toggle();
+        $('#comandos').toggle();
+        $('#comandos')[0].scrollIntoView(true);
+        });
+    </script>
+    </body>
+</html>

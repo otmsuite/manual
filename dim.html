@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de Referência - HTML</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js">    
+    </script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    </head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+<body>   
+    <header class="header">
+        <nav>
+            <img src="otmsuite2.png" alt="OTMSuite">
+            <h1> Manual de Referência</h1>
+        </nav>
+   </header>    
+  <div class="conteudo-exp">
+    <h1>[DIM]</h1>
+    <p>
+        Esta tag define a área útil da tela a ser utilizada pelo MKQ (além de definir o comportamento do grid da tabela de dados). <br>
+        É opcional e pode receber SETE parâmetros separados por dois pontos. <br>
+    </p>
+    <h2>Sintaxe</h2>
+    <p>
+        <code>75 : 0 : 0 : 25 : 70 : 15 : 100</code>
+    </p>
+    <h2>Detalhe</h2>
+    <ul>
+        <li>
+            1. Define o percentual da largura da tela que deverá ser utilizado pelo formulário de grid
+            (nossa sugestão é 98);
+        </li>
+        <li>
+            2. O segundo parâmetro indica se a largura das colunas serão proporcionalizadas nesta
+            tela ou se deverão ser fixas com aplicação de barra de rolagem horizontal, se necessário.<br>
+            Quando este valor for 0 as colunas serão proporcionalizadas. <br>
+            Quando este valor for maior que 0 (normalmente 15) a largura das colunas será resultante
+            da multiplicação da largura definida nos labels do [SQL] por este fator informado e uma
+            barra de rolagem horizontal poderá ser apresentada (se necessário);
+        </li>
+        <li>
+            3. O terceiro parâmetro só é considerado se o segundo parâmetro for diferente de zero.
+            Este parâmetro indica o número de colunas a fixar na lateral esquerda. <br>
+            Colunas ocultas (com dimensão ZERO) também devem ser contadas;
+        </li>
+        <li>
+            4. Este parâmetro define, opcionalmente, a altura das linhas do grid. O default é 25.<br>
+            A alteração da altura pode ser útil quando há necessidade de apresentar imagens como
+            informação resultante do [SQL];
+        </li>
+        <li>
+            5. Define, opcionalmente, o percentual da altura da tela que deverá ser utilizado pelo formulário do grid.<br>
+            Se for menor do que 70 (padrão) a tela será centralizada verticalmente;
+        </li>
+        <li>
+            6. Define, opcionalmente, a espessura a ser aplicada em caso de barras de rolagem no grid
+            de dados. Se não for informado, assume 15 (padrão).
+        </li>
+        <li>
+            7. Define, opcionalmente, o fator de redimensionamento dos elementos na tela (120, por
+            exemplo, aumentará em 20%).
+        </li>
+    </ul>
+    <h2> Exemplo de grids com diferentes dimensões</h2>
+    <div class="exemplo-dim">
+        <img style="max-width: 300px;"src="imagens/exemplodim.png" alt="exemplo tag dim">
+        <img style="max-width: 500px;"src="imagens/exemplodim2.png" alt="exemplo tag dim">
+    </div>
+    <p>
+    </p>
+    </p>
+    <div>
+    </div>
+    </div>
+    <div class="container-titulo-barra">
+    <a>Conteúdo</a>
+    </div>
+    <!--Navigation bar-->
+    <div id="nav-placeholder">
+    </div>
+    <script>
+        $(function(){
+          $("#nav-placeholder").load("nav.html");
+        });
+        </script>
+        <!--end of Navigation bar-->
+    <script type="text/javascript">
+        /* $('.collapsable').click(function(){ $(this).parent().children().toggle();
+        $(this).toggle(); }); */
+        $( document ).ready(function() {
+        $('#def').parent().children().toggle();
+        $('#def').toggle();
+        $('#def')[0].scrollIntoView(true);
+        });
+    </script>
+    </body>
+</html>
+ 

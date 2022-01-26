@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de Referência - HTML</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js">    
+    </script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    </head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+<body>   
+    <header class="header">
+        <nav>
+            <img src="otmsuite2.png" alt="OTMSuite">
+            <h1> Manual de Referência</h1>
+        </nav>
+   </header>    
+  <div class="conteudo-exp">
+    <h1>[GRD]</h1>
+    <p>
+        Esta tag permite definir agrupamentos no cabeçalho, além de permitir redefinição de
+        algumas configurações do grid.
+    </p>
+    <h2>Subtags</h2>
+    <h2 style="padding-top: 12px;">[OC]</h2>
+    <p>Pode  receber:</p>
+    <ul class="spacing">
+        <li>
+           <h3>C</h3>
+           Oculta o cabeçalho.
+       </li>
+       <li>
+        <h3>R</h3>
+        Oculta o rodapé.
+    </li>
+    <li>
+        <h3>O</h3>
+        Oculta os botões de ordenação.
+    </li>
+    <li>
+        <h3>F</h3>
+        Oculta os botões de filtrar.
+    </li>
+    </ul>
+    <h2 style="padding-top: 12px;">[FL]</h2>
+    <p>
+        A subtag [FL] permite realizar buscas em colunas ocultas caso seu conteúdo inicie com S
+        (o padrão de buscas é somente em colunas visíveis).
+    </p>
+    <h2 style="padding-top: 12px;">[FT] e [FC]</h2>
+    <p>
+        Estas subtags permitem definir as fontes a serem utilizadas para o cabeçalho do
+        grid de dados (tag [SQL]).
+    </p>
+    <h3>Notação das subtags de fontes:</h3>
+    <p>
+        <code>Nome da fonte - Tipo - Tamanho</code>
+    </p>
+    <h3>O Tipo segue a definição:</h3>
+    <p>
+        <code>0 = Normal | 2 = Negrito | 3 = Ambos</code>
+    </p>    
+    <h3>Padrão assumido:</h3>
+    <p> <code>Noto Sans - 0 - 12</code></p>  
+    <div>
+    </div>
+    </div>
+    <div class="container-titulo-barra">
+    <a>Conteúdo</a>
+    </div>
+    <!--Navigation bar-->
+    <div id="nav-placeholder">
+    </div>
+    <script>
+        $(function(){
+          $("#nav-placeholder").load("nav.html");
+        });
+        </script>
+        <!--end of Navigation bar-->
+    <script type="text/javascript">
+        /* $('.collapsable').click(function(){ $(this).parent().children().toggle();
+        $(this).toggle(); }); */
+        $( document ).ready(function() {
+        $('#grd').parent().children().toggle();
+        $('#grd').toggle();
+        $('#grd')[0].scrollIntoView(true);
+        });
+    </script>
+    </body>
+</html>
+ 

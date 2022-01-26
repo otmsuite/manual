@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de Referência - HTML</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js">    
+    </script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    </head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+<body>   
+    <header class="header">
+        <nav>
+            <img src="otmsuite2.png" alt="OTMSuite">
+            <h1> Manual de Referência</h1>
+        </nav>
+   </header>    
+  <div class="conteudo-exp">
+    <h1>DT</h1>
+     <p>
+        O parâmetro de data pode receber em sua notação:
+    </p>
+     <p>
+        N (opcional): Indica que o calendário não será exibido ao clicar no botão do mesmo (não é
+        necessário ter ";" após o mesmo);
+     </p>
+     <p>
+        RangeInicial e RangeFinal (opcionais): somente podem ser utilizados juntos e indicam um
+        intervalo de datas permitidas pelo parâmetro;
+     </p>
+     <p>
+        Where (opcional): somente serão consideradas como datas válidas as que retornarem verdadeiro na condição definida. Usa-se "[$EDT$]" como sendo a data a ser testada.
+     </p>
+     <h2>Sintaxe</h2>
+     <p>
+        <code>
+            [PARAMETRO]: Label: DT: N; Data Inicial; Data Final ;WHERE : Default : ID do VDD : [PAR Posicionamento]
+        </code>
+     </p>
+     <h2>Exemplo de código</h2>
+     <p>
+         <code>
+            [PAR] <br>
+            [DATA]: Data : DT250 :NH-5 ;H+5 ; to _char(to_date(‘[$EDT$]’ ‘d’) in (2,3,4,5,6) : +1
+        </code>
+     </p>
+     <h2>Exemplo na plataforma</h2>
+     <img src="imagens/.png" alt="exemplo de DT na plataforma">
+    </div>
+    <div class="container-titulo-barra">
+    <a>Conteúdo</a>
+    </div>
+    <!--Navigation bar-->
+    <div id="nav-placeholder">
+    </div>
+    <script>
+        $(function(){
+          $("#nav-placeholder").load("nav.html");
+        });
+        </script>
+        <!--end of Navigation bar-->
+    <script type="text/javascript">
+        /* $('.collapsable').click(function(){ $(this).parent().children().toggle();
+        $(this).toggle(); }); */
+        $( document ).ready(function() {
+        $('#identificador-ctrl-v').parent().children().toggle();
+        $('#identificador-ctrl-v').toggle();
+        $('#identificador-ctrl-v')[0].scrollIntoView(true);
+        });
+    </script>
+    </body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de Referência - HTML</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js">    
+    </script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    </head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+<body>   
+    <header class="header">
+        <nav>
+            <img src="otmsuite2.png" alt="OTMSuite">
+            <h1> Manual de Referência</h1>
+        </nav>
+   </header>    
+  <div class="conteudo-exp">
+    <h1>@>ARQ</h1>
+     <p>
+        Permite ler/gravar um arquivo (texto, xml, csv, etc).
+    </p>
+    <h2>Sintaxe</h2>
+    <p>
+        <code>Arquivo; Sessão; I/O; Mensagem; Tipo; Grava_Erro</code>
+    </p>
+    <h3>I/O</h3>
+    <p>
+        I (input) lê o arquivo; O (output) grava o arquivo.
+    </p>
+    <h3>Mensagem</h3>
+    <p>
+        SEM não mostra as mensagens de erro na tela, gravando-as em OTM_MENSAGEM.
+    </p>
+    <h3>Tipo</h3>
+    <p>
+        Se passado (opcional) exporta apenas dados da sessão/tipo definido.
+    </p>
+    <h3>Grava_Erro</h3>
+    <p>
+        SIM grava os registros (na importação) mesmo que ocorra algum erro (com commit por registro)
+NÃO (default) grava apenas se a importação ocorrer até o final, sem erros (sem commit por
+registro).
+    </p>
+    <h2>Exemplo</h2>
+    </div>  
+    <div class="container-titulo-barra">
+    <a>Conteúdo</a>
+    </div>
+    <!--Navigation bar-->
+    <div id="nav-placeholder">
+    </div>
+    <script>
+        $(function(){
+          $("#nav-placeholder").load("nav.html");
+        });
+        </script>
+        <!--end of Navigation bar-->
+    <script type="text/javascript">
+        /* $('.collapsable').click(function(){ $(this).parent().children().toggle();
+        $(this).toggle(); }); */
+        $( document ).ready(function() {
+        $('#comandos').parent().children().toggle();
+        $('#comandos').toggle();
+        $('#comandos')[0].scrollIntoView(true);
+        });
+    </script>
+    </body>
+</html>

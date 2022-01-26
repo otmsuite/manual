@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de Referência - HTML</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js">    
+    </script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    </head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+<body>   
+    <header class="header">
+        <nav>
+            <img src="otmsuite2.png" alt="OTMSuite">
+            <h1> Manual de Referência</h1>
+        </nav>
+   </header>    
+  <div class="conteudo-exp">
+    <h1>[OPP]</h1>
+     <p>
+        Permite acrescentar botões de ação na tela de parâmetros (que normalmente possui apenas os botões Confirmar e Retornar). Deve ser utilizada em conjunto com a tag [PAR].      
+     </p>
+     <p>
+        Caso use Limpar, ao retornar para a tela de parâmetros os parâmetros voltarão aos seus
+        valores defaults.
+     </p>
+    <p>
+        Por padrão, os parâmetros mantêm os valores alterados.
+        Após o clique, o [OPP] é considerado como um parâmetro, comumente sendo utilizado nos
+        blocos [MII], [MIF], [PLI] e [SQL].
+    </p>
+    <p>
+        Seu conteúdo principal (ID), obtido através de [OPP], é equivalente ao identificador do
+        botão clicado.
+    </p>
+    <p>
+        Seu conteúdo secundário (Texto), obtido através de {[OPP]}, é equivalente ao label do
+        botão clicado.
+    </p>
+    <h2>Sintaxe</h2>
+    <p>
+        <code>IDENTIFICADOR:IMAGEM:LABEL: SAIR (FECHAR FORM):LIMPAR</code>
+    </p>
+    <h2>Exemplo de código </h2>
+    <p>
+        <code>
+            [OPP] <br>
+            #> instr(‘[$$$]’, “$$$”) = 0 and ‘[$$$]’ <> ‘0’ <#<br>
+            OPP01: SVGI/md-close-circle-outline : Confirmar : Sair<br><br>
+            [PAR]<br>
+            [CHECK]: Listar tabelas sem registros? : CK300 : S ; N ; Sim ; Não : S</code>
+    </p>
+    <h2>Exemplo na plataforma </h2>
+    <img style="max-width: 300px;"src="imagens/.png" alt="exemplo opp na plataforma">
+    </div>
+    <div class="container-titulo-barra">
+    <a>Conteúdo</a>
+    </div>
+    <!--Navigation bar-->
+    <div id="nav-placeholder">
+    </div>
+    <script>
+        $(function(){
+          $("#nav-placeholder").load("nav.html");
+        });
+        </script>
+        <!--end of Navigation bar-->
+    <script type="text/javascript">
+        /* $('.collapsable').click(function(){ $(this).parent().children().toggle();
+        $(this).toggle(); }); */
+        $( document ).ready(function() {
+        $('#identificador-ctrl-v').parent().children().toggle();
+        $('#identificador-ctrl-v').toggle();
+        $('#identificador-ctrl-v')[0].scrollIntoView(true);
+        });
+    </script>
+    </body>
+</html>

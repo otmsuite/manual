@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de Referência - HTML</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js">    
+    </script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    </head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+<body>   
+    <header class="header">
+        <nav>
+            <img src="otmsuite2.png" alt="OTMSuite">
+            <h1> Manual de Referência</h1>
+        </nav>
+   </header>    
+  <div class="conteudo-exp">
+    <h1>[OPC]</h1>
+     <p>
+        Permite acrescentar botões na janela da tabela de dados apresentados.Deve ser utilizado
+        em conjunto com as tags [PLE] e [SQL]. A tag [PLF] será executada somente após o clique
+        em um dos botões do grid.
+     </p>
+     <p>
+        Após o clique, o [OPC] é considerado como um parâmetro, podendo ser utilizado nos blocos [MFI], [PLF] e [MFF].
+     </p>
+     <p>
+        Seu conteúdo principal (ID), obtido através de [OPC], é equivalente ao identificador do
+        botão clicado.
+        Seu conteúdo secundário (Texto), obtido através de {[OPC]}, é equivalente ao label do
+        botão clicado.        
+     </p>
+     <h2>Sintaxe</h2>
+     <p>
+        <code>IDENTIFICADOR:IMAGEM:LABEL: SAIR (FECHAR FORM):LOCALIZAÇÃO E VALIDAÇÃO</code>
+     </p>
+     <h2>Exemplo de código</h2>
+     <p>
+        <code>
+            [OPC] <br>
+            OPC01: %L/1 : Executar ação 1 : Sair <br>
+            OPC02: %L/2 : Número da Coluna : N : [$POPUP$] [$COL$] = 2 <br>
+            OPC03: %L/3 : Número da Linha : N : [$POPUP$] [$LIN$] = 3 <br>
+            OPC04: %L/4 : Nome da Coluna : N : [$POPUP$] ‘[$COLNAME$]’ = ‘YYY’ <br>
+            OPC04: %L/5 : Conteúdo da Célula : N : [$POPUP$] ‘[$CELL$]’ = ‘xx’ <br>
+            OPC04: %L/6 : Nome da Coluna : N : [$BARRA$] [PLE] IN (1,5) <br> <br>
+            [SQL]  <br>
+            select ‘teste’ from dual
+        </code>
+     </p>
+     <h2>Exemplo na plataforma </h2>
+     <p><img src="" alt="exemplo OPC  na plataforma"></p>
+    </div>
+    <div class="container-titulo-barra">
+    <a>Conteúdo</a>
+    </div>
+    <!--Navigation bar-->
+    <div id="nav-placeholder">
+    </div>
+    <script>
+        $(function(){
+          $("#nav-placeholder").load("nav.html");
+        });
+        </script>
+        <!--end of Navigation bar-->
+    <script type="text/javascript">
+        /* $('.collapsable').click(function(){ $(this).parent().children().toggle();
+        $(this).toggle(); }); */
+        $( document ).ready(function() {
+        $('#opc').parent().children().toggle();
+        $('#opc').toggle();
+        $('#opc')[0].scrollIntoView(true);
+        });
+    </script>
+    </body>
+</html>

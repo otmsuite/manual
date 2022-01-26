@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de Referência - HTML</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js">    
+    </script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    </head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+<body>   
+    <header class="header">
+        <nav>
+            <img src="otmsuite2.png" alt="OTMSuite">
+            <h1> Manual de Referência</h1>
+        </nav>
+   </header>    
+  <div class="conteudo-exp">
+    <h1>Palavras reservadas</h1>
+     <p>
+        A OTMSuite possui algumas palavras (variáveis) reservadas utilizadas em vários
+contextos.
+     </p>
+     <p>
+        <ul>
+            <li><code>CTRL_V</code></li>
+            <li><code>HIDDEN</code></li>
+            <li><code>#INCLUDE</code></li>
+            <li><code>#SELECT</code></li>
+            <li><code>##POS##</code></li>
+            <li><code>[$DEBUG$]</code></li>
+            <li><code>[$COL$]</code></li>
+            <li><code>[$COLNAME$]</code></li>
+            <li><code>[$CELL$]</code></li>
+            <li><code>[$LIN$]</code></li>
+            <li><code>[$POPUP$]</code></li>
+            <li><code>[$BARRA$]</code></li>
+            <li><code>[$EDT$]</code></li>
+            <li><code>[$FK$]</code></li>
+            <li><code>[$n$]</code></li>
+            <li><code>[$WIDTH$]</code></li>
+            <li><code>BEL</code></li>
+            <li><code>EOT</code></li>
+            <li><code>AQUI_TEM_DOIS_PONTOS</code></li>
+            <li><code>AQUI_TEM_PONTO_VIRG</code></li>
+        </ul>
+     </p>
+    <h2>Detalhe</h2>
+    <p>
+        Ao iniciar uma linha do MKQ com #INCLUDE, pode-se passar o nome de um MKQ para ser
+incluído dentro do atual, executando o seu conteúdo. O MKQ a ser incluído precisa estar
+na pasta Queries/includes
+    </p>
+    </div>
+    <div class="container-titulo-barra">
+    <a>Conteúdo</a>
+    </div>
+    <!--Navigation bar-->
+    <div id="nav-placeholder">
+    </div>
+    <script>
+        $(function(){
+          $("#nav-placeholder").load("nav.html");
+        });
+        </script>
+        <!--end of Navigation bar-->
+    <script type="text/javascript">
+        /* $('.collapsable').click(function(){ $(this).parent().children().toggle();
+        $(this).toggle(); }); */
+        $( document ).ready(function() {
+        $('#qr-code').parent().children().toggle();
+        $('#qr-code').toggle();
+        $('#qr-code')[0].scrollIntoView(true);
+        });
+    </script>
+    </body>
+</html>

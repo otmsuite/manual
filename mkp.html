@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de Referência - HTML</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js">    
+    </script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    </head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+<body>   
+    <header class="header">
+        <nav>
+            <img src="otmsuite2.png" alt="OTMSuite">
+            <h1> Manual de Referência</h1>
+        </nav>
+   </header>    
+  <div class="conteudo-exp">
+    <h1>MKP</h1>
+     <p>
+        Definido por arquivo .MKP que pode ser interpretado em três blocos distintos:
+    </p>
+    <p>
+        <ul>
+            <li> a) Definições gerais do painel (MKP);</li>
+            <li> b) Elementos que compõe o painel (ELEMENTS);</li>            
+            <li> c) Definição de ações (opcionais) a serem executadas pelos elementos (COMMANDS).</li>                       
+        </ul>
+    </p>
+    <h2>Sintaxe</h2>
+    <p>
+        <code>[MKP] Título do painel#; PosX; PosY; Largura; Altura; Cor; Resolução Original
+            (LXH);Timer Loop; Timer Carga; PastaACT&SQL; Nº Monitor</code>
+    </p>
+   <p>
+    Um painel pode possuir um (ou uma combinação) dos quatro comportamentos a seguir:
+   </p>
+   <h2>Estático</h2>
+   <p> 
+       Elementos não sofrem atualização;
+   </p>
+   <p>
+       Para atualizar os elementos é necessário uma reabertura do painel.
+   </p>
+   <h2>Motor posicional</h2>
+   <p>
+    Os elementos podem ser atualizados a partir do posicionamento do cursor do mouse (ou
+    cursor de tela);
+   </p>
+   <p>
+    A atualização ocorre a partir de elementos de natureza [MKQ] e/ou [IMG].
+   </p>
+   <h2>Motor temporal</h2>
+   <p>
+    Os elementos podem ser atualizados com o passar do tempo com base em definições dos
+    timers definidos em [MKP];    
+   </p>
+   <p>
+    A atualização ocorre com base em conteúdos dos arquivos .ACT ou .SQL.
+   </p>
+   <h2>Motor acional</h2>
+   <p>
+    A atualização ocorre a partir de cliques em elementos;
+   </p>
+   <p>
+    As definições podem ocorrer através de definições em [COMMANDS] ou em elemento de
+    natureza [IMG].    
+   </p>
+   <p></p>
+   <p>
+        Um arquivo .MKP é interpretado em tempo de execução de forma sequencial.
+   </p>
+   <p></p>
+   <p>
+        Pode executar, caso seja necessário, blocos PL/SQL através da tag [SQL], como por
+        exemplo:
+   </p>
+   <p>
+       <code>
+        [SQL] <br>
+        begin <br>
+        otm_trace_pr('TESTE - MODELO');
+       </code>
+   </p>
+   <p>
+    Além de blocos PL/SQL, a tag [SQL] também pode ser utilizada para retornar o próprio
+    conteúdo do arquivo .MKP. Veja:
+   </p>
+   <p>
+       <code>
+        [SQL] <br>
+        select '[MKP] Titulo; 0; 0; 1430; 610; BCO; 1600x900; 0; 0;' from dual
+       </code>
+   </p>
+    </div>
+    <div class="container-titulo-barra">
+    <a>Conteúdo</a>
+    </div>
+    <!--Navigation bar-->
+    <div id="nav-placeholder">
+    </div>
+    <script>
+        $(function(){
+          $("#nav-placeholder").load("nav.html");
+        });
+        </script>
+        <!--end of Navigation bar-->
+    <script type="text/javascript">
+        /* $('.collapsable').click(function(){ $(this).parent().children().toggle();
+        $(this).toggle(); }); */
+        $( document ).ready(function() {
+        $('#imagens').parent().children().toggle();
+        $('#imagens').toggle();
+        $('#imagens')[0].scrollIntoView(true);
+        });
+    </script>
+    </body>
+</html>

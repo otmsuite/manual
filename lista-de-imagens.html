@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de Referência - HTML</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js">    
+    </script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    </head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+<body>   
+    <header class="header">
+        <nav>
+            <img src="otmsuite2.png" alt="OTMSuite">
+            <h1> Manual de Referência</h1>
+        </nav>
+   </header>    
+  <div class="conteudo-exp">
+    <h1>Lista de imagens</h1>
+    <p>
+        Procurar a imagem ideal para determinada situação pode ser algo trabalhoso e consumir
+        mais tempo do que o esperado. A Lista de Imagens do Atom torna esse processo muito
+        mais dinâmico e natural. 
+    </p>
+    <p>
+        Uma vez aberta, apresentará as imagens na ordem das pastas de imagens contidas dentro
+        da pasta <code>images</code> (estrutura de instalação da plataforma). Para facilitar ainda mais na procura pela imagem adequada, existe a barra de pesquisa. Procurar por termos (geralmente em
+        inglês) é, geralmente, garantia de sucesso.
+    </p>
+    <p>
+        Ao selecionar a imagem desejada, seu respectivo caminho será inserido automaticamente
+        no local em que o cursor (barra vertical de digitação) estava no momento de abertura da
+        lista.
+    </p>
+    <div class="img"> 
+        <img src="imagens/ldi-open.png" alt="lista de imagens"> 
+    </div>
+    <p>
+        Para abrir a lista de imagens clique no ícone destacado na imagem abaixo na barra de tarefas do atom.
+    </p>
+    <div class="img"> 
+        <img src="imagens/ldi-icon.png" alt="ícone da lista de imagens na barra de tarefas do Atom"> 
+    </div>
+    </div>
+    <div class="container-titulo-barra">
+    <a>Conteúdo</a>
+    </div>
+    <!--Navigation bar-->
+    <div id="nav-placeholder">
+    </div>
+    <script>
+        $(function(){
+          $("#nav-placeholder").load("nav.html");
+        });
+        </script>
+        <!--end of Navigation bar-->
+    <script type="text/javascript">
+        /* $('.collapsable').click(function(){ $(this).parent().children().toggle();
+        $(this).toggle(); }); */
+        $( document ).ready(function() {
+        $('#lista-de-imagens').parent().children().toggle();
+        $('#lista-de-imagens').toggle();
+        $('#lista-de-imagens')[0].scrollIntoView(true);
+        });
+    </script>
+    </body>
+</html>
+ 
