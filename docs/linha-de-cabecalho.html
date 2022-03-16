@@ -1,87 +1,45 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manual de Referência - HTML</title>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js">    
-    </script>
-    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-    </head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-<body>   
-    <header class="header">
-        <nav>
-            <img src="otmsuite2.png" alt="OTMSuite">
-            <h1> Manual de Referência</h1>
-        </nav>
-   </header>    
-  <div class="conteudo-exp">
-    <h1>Linha de cabeçalho</h1>
-     <p>
-         A linha de cabeçalho segue a sintaxe:<code> LABEL; TITULO; ICONE; VISUALIZAR; ACESSO; VARIAVEIS</code>
-     </p>
-     <h2>Label</h2>
-     <p>
-        Texto a ser apresentado no centro da tela; <br>
-        Se iniciado com #, será considerado como uma imagem.
-     </p>
-     <h2>Título</h2>
-     <p>
-        Título a ser apresentado no cabeçalho da tela; <br>
-        Se o texto finalizar com o caracter #, ao fechar a janela no botão vermelho
-        no topo esquerdo da tela, uma mensagem de confirmação será solicitada;
-        Se o texto iniciar com "SELECT", o Título será igual ao conteúdo da primeira
-        coluna/linha do script executado.
-     </p>
-     <h2>Ícone</h2>
-     <p>
-        Imagem PNG ou SVG (pasta Images) a ser utilizada como ícone na barra de
-tarefas do Sistema Operacional.
-     </p>
-     <h2>Visualizar</h2>
-     <p>
-        Se este texto iniciar com o caractere N (não visualizar), o menu não aparecerá no menu de menus.
-     </p>
-     <h2>Variáveis</h2>
-     <p>
-        Opcionalmente, podemos ter aqui a declaração de variáveis "globais" com
-        conteúdos pré-definidos; <br>
-        As variáveis globais podem ser utilizadas, por exemplo, em arquivos MKQ
-        (bastando para isso, referenciá-la); <br>
-        A definição das mesmas ocorre através de sua denominação (entre colchetes) seguido do caracter : e respectivo conteúdo.
-    </p>
-    </p>
+
+<body>
+    <div class="conteudo-exp">
+        <h1>Linha de cabeçalho</h1>
+        <p>
+            A linha de cabeçalho segue a sintaxe:<code> LABEL; TITULO; ICONE; VISUALIZAR; ACESSO; VARIAVEIS</code>
+        </p>
+        <h2>Label</h2>
+        <p>
+            Texto a ser apresentado no centro da tela; <br>
+            Se iniciado com #, será considerado como uma imagem.
+        </p>
+        <h2>Título</h2>
+        <p>
+            Título a ser apresentado no cabeçalho da tela; <br>
+            Se o texto finalizar com o caracter #, ao fechar a janela no botão vermelho
+            no topo esquerdo da tela, uma mensagem de confirmação será solicitada;
+            Se o texto iniciar com "SELECT", o Título será igual ao conteúdo da primeira
+            coluna/linha do script executado.
+        </p>
+        <h2>Ícone</h2>
+        <p>
+            Imagem PNG ou SVG (pasta Images) a ser utilizada como ícone na barra de
+            tarefas do Sistema Operacional.
+        </p>
+        <h2>Visualizar</h2>
+        <p>
+            Se este texto iniciar com o caractere N (não visualizar), o menu não aparecerá no menu de menus.
+        </p>
+        <h2>Variáveis</h2>
+        <p>
+            Opcionalmente, podemos ter aqui a declaração de variáveis "globais" com
+            conteúdos pré-definidos; <br>
+            As variáveis globais podem ser utilizadas, por exemplo, em arquivos MKQ
+            (bastando para isso, referenciá-la); <br>
+            A definição das mesmas ocorre através de sua denominação (entre colchetes) seguido do caracter : e
+            respectivo conteúdo.
+        </p>
+        </p>
     </div>
-    <div class="container-titulo-barra">
-    <a>Conteúdo</a>
-    </div>
-    <!--Navigation bar-->
-    <div id="nav-placeholder">
-    </div>
-    <script>
-        $(function(){
-          $("#nav-placeholder").load("nav.html");
-        });
-        </script>
-        <!--end of Navigation bar-->
-    <script type="text/javascript">
-        /* $('.collapsable').click(function(){ $(this).parent().children().toggle();
-        $(this).toggle(); }); */
-        $( document ).ready(function() {
-        $('#linha-de-cabecalho').parent().children().toggle();
-        $('#linha-de-cabecalho').toggle();
-        $('#linha-de-cabecalho')[0].scrollIntoView(true);
-        });
-    </script>
-    </body>
+</body>
+
 </html>
- 
-
-
-
